@@ -14,11 +14,12 @@ u10 = User.create :email => 'char@user.com', :name => 'char'
 
 Activity.destroy_all
 
-a1 = Activity.create :activity => '', :user_id => u1.id
-a2 = Activity.create :activity => '', :user_id => u2.id
-a3 = Activity.create :activity => '', :user_id => u4.id
-a4 = Activity.create :activity => '', :user_id => u5.id
-a5 = Activity.create :activity => '', :user_id => u10.id
+a1 = Activity.create :activity => 'John Surfed a really good wave', :user_id => u1.id
+a2 = Activity.create :activity => 'helped a person', :user_id => u2.id
+a3 = Activity.create :activity => 'made some opinions', :user_id => u4.id
+a4 = Activity.create :activity => 'made a presentation', :user_id => u5.id
+a5 = Activity.create :activity => 'sang a song', :user_id => u10.id
+a6 = Activity.create :activity => 'played guitar', :user_id => u1.id
 
 Point.destroy_all
 
@@ -33,3 +34,4 @@ Point.create :activity_id => a4.id, :voting_user_id => u3.id, :points => 4, :com
 Point.create :activity_id => a4.id, :voting_user_id => u7.id, :points => 20, :comment => 'Good job.'
 Point.create :activity_id => a5.id, :voting_user_id => u6.id, :points => 15, :comment => 'Good job.'
 Point.create :activity_id => a5.id, :voting_user_id => u5.id, :points => 20, :comment => 'Good job yo'
+Point.create :activity_id => a6.id, :voting_user_id => u5.id, :points => 20, :comment => 'Good job yo bro hoe gooo'
