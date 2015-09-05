@@ -1,0 +1,19 @@
+<div class="point">
+<%= form_for(@point) do |f| %>
+	<p>
+	<label>Activity: </label><%= f.select :activity_id, Activity.all.map { |activity| [activity.activity,  activity.id] }, :include_blank => true %>
+	</p>
+
+	<p>
+	<label>From User :</label><%= f.select :voting_user_id, User.all.map { |user| [user.name,  user.id] }, :include_blank => true %>
+	</p>
+	
+	<p>
+	<label>Points to Add: </label>
+		<%= f.select :points, ((0..500).map {|i| [i,i] } << ["No limit",nil]) %>
+	</p>
+
+	<%= f.submit %>
+<% end %>
+
+</div>

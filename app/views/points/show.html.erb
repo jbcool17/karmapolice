@@ -1,6 +1,21 @@
-<h1>Points#show</h1>
-<p>Find me in app/views/points/show.html.erb</p>
+
 
 <p>Activity: <%= Activity.find(@point.activity_id).activity %></p>
 
+<p>Name: <%= User.find(Activity.find(@point.activity_id).user_id).name %></p>
+
 <p>TOTAL POINTS: <%= @total[@point.activity_id] %></p>
+
+
+<h4>Users Voted: <%=  %></h4>
+
+
+<% @who_voted.each do |user| %>
+
+<p><%= User.find(user).name %>:: <%= Point.find_by(:voting_user_id => user).points %></p>
+
+	
+<% end %>
+
+<%= link_to "ADD POINTS", new_point_path %>
+
