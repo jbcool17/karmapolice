@@ -4,10 +4,11 @@ class ActivitiesController < ApplicationController
   	@users = User.all
 
 
-  	
+
   end
 
   def show
+  	@activity = Activity.find params[:id]
   end
 
   def new

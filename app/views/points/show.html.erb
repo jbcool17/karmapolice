@@ -1,2 +1,6 @@
 <h1>Points#show</h1>
 <p>Find me in app/views/points/show.html.erb</p>
+
+<p>Activity: <%= Activity.find(@point.activity_id).activity %></p>
+
+<p>TOTAL POINTS: <%= @total[@point.activity_id] %></p>

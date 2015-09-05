@@ -1,2 +1,3 @@
-<h1>Activities#show</h1>
-<p>Find me in app/views/activities/show.html.erb</p>
+<h2>Activity Name: <%= @activity.activity %></h2>
+
+<p>Person who preformed activity: <%= User.find(@activity.user_id).name %></p>

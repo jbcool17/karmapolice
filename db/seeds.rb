@@ -14,7 +14,7 @@ u10 = User.create :email => 'char@user.com', :name => 'char'
 
 Activity.destroy_all
 
-a1 = Activity.create :activity => 'John Surfed a really good wave', :user_id => u1.id
+a1 = Activity.create :activity => 'John surfed a wave', :user_id => u1.id
 a2 = Activity.create :activity => 'helped a person', :user_id => u2.id
 a3 = Activity.create :activity => 'made some opinions', :user_id => u4.id
 a4 = Activity.create :activity => 'made a presentation', :user_id => u5.id
@@ -23,15 +23,15 @@ a6 = Activity.create :activity => 'played guitar', :user_id => u1.id
 
 Point.destroy_all
 
-Point.create :activity_id => a1.id, :voting_user_id => u2.id, :points => 10, :comment => 'Good job banana'
-Point.create :activity_id => a1.id, :voting_user_id => u3.id, :points => 5, :comment => 'Good job mango'
-Point.create :activity_id => a1.id, :voting_user_id => u10.id, :points => 11, :comment => 'Good job.'
-Point.create :activity_id => a2.id, :voting_user_id => u1.id, :points => 7, :comment => 'Good job broself'
-Point.create :activity_id => a2.id, :voting_user_id => u6.id, :points => 13, :comment => 'Good job guy.'
-Point.create :activity_id => a3.id, :voting_user_id => u5.id, :points => 5, :comment => 'Good mate.'
-Point.create :activity_id => a3.id, :voting_user_id => u9.id, :points => 6, :comment => 'Good job.'
-Point.create :activity_id => a4.id, :voting_user_id => u3.id, :points => 4, :comment => 'Good job son.'
-Point.create :activity_id => a4.id, :voting_user_id => u7.id, :points => 20, :comment => 'Good job.'
-Point.create :activity_id => a5.id, :voting_user_id => u6.id, :points => 15, :comment => 'Good job.'
-Point.create :activity_id => a5.id, :voting_user_id => u5.id, :points => 20, :comment => 'Good job yo'
-Point.create :activity_id => a6.id, :voting_user_id => u5.id, :points => 20, :comment => 'Good job yo bro hoe gooo'
+Point.create :activity_id => a1.id, :voting_user_id => u2.id, :points => 100, :comment => 'Good job banana'
+Point.create :activity_id => a1.id, :voting_user_id => u3.id, :points => 50, :comment => 'Good job mango'
+Point.create :activity_id => a1.id, :voting_user_id => u10.id, :points => 110, :comment => 'Good job.'
+Point.create :activity_id => a2.id, :voting_user_id => u1.id, :points => 70, :comment => 'Good job broself'
+Point.create :activity_id => a2.id, :voting_user_id => u6.id, :points => 130, :comment => 'Good job guy.'
+Point.create :activity_id => a3.id, :voting_user_id => u5.id, :points => 50, :comment => 'Good mate.'
+Point.create :activity_id => a3.id, :voting_user_id => u9.id, :points => 60, :comment => 'Good job.'
+Point.create :activity_id => a4.id, :voting_user_id => u3.id, :points => 40, :comment => 'Good job son.'
+Point.create :activity_id => a4.id, :voting_user_id => u7.id, :points => 200, :comment => 'Good job.'
+Point.create :activity_id => a5.id, :voting_user_id => u6.id, :points => 150, :comment => 'Good job.'
+Point.create :activity_id => a5.id, :voting_user_id => u5.id, :points => 200, :comment => 'Good job yo'
+Point.create :activity_id => a6.id, :voting_user_id => u5.id, :points => 200, :comment => 'Good job yo bro hoe gooo'
