@@ -5,3 +5,11 @@
 	<p> Activity: <%= point.activity_id %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
 	
 <% end %>
+
+<h2>POINTS TOTALS</h2>
+<h3>With Users</h3>
+<% @point_totals.each do |activity, total| %>
+
+<p>The user - <%= User.find(Activity.find(activity).user_id).name %>, recieved a total of <%= total %> points for their activity of <%= Activity.find(activity).activity %>.</p>
+
+<% end %>
