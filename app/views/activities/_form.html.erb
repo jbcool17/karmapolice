@@ -1,0 +1,14 @@
+<div class="activity">
+<%= form_for(@activity) do |f| %>
+	<p>
+		<%= f.label :activity %>
+		<%= f.text_field :activity %>
+	</p>
+	<p>
+	<label>User</label><%= f.select :user_id, User.all.map { |user| [user.name,  user.id] }, :include_blank => true %>
+	</p>
+
+	<%= f.submit %>
+<% end %>
+
+</div>
