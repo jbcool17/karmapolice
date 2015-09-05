@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+	<nav>
+		<%= link_to 'Home', '/' %>
+		<%= link_to 'USERS', users_path %>
+		<%= link_to 'ACTIVITIES', activities_path %>
+		<%= link_to 'POINTS', points_path %>
+	</nav>
+
+	<div class="container">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
