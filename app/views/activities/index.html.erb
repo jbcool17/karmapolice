@@ -1,0 +1,7 @@
+<h2>Activities INDEX</h2>
+
+<% @activities.each do |activity| %>
+
+	<p>User: <%= User.find(activity.user_id).name %> || Activity: <%= activity.activity %></p>
+	
+<% end %>

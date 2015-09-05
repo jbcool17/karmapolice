@@ -1,0 +1,7 @@
+<h2>POINTS INDEX</h2>
+
+<% @points.each do |point| %>
+
+	<p> Activity: <%= point.activity_id %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
+	
+<% end %>
