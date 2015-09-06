@@ -1,8 +1,22 @@
-<h2>Activities INDEX</h2>
+<h2>Activities List</h2>
+
+<p><%= @current.name %>, here are all your activities.</p>
+
 
 <% @activities.each do |activity| %>
-	<% if User.exists?(activity.user_id) %>
+	<% if User.find(activity.user_id).id == @current.id  %>
 		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %></p>
+	<hr>
+	<% end %>
+	
+<% end %>
+
+<h2>Other User Activities List</h2>
+
+<% @activities.each do |activity| %>
+	<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current.id   %>
+		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %></p>
+	<hr>
 	<% end %>
 	
 <% end %>
