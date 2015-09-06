@@ -1,9 +1,9 @@
 <h2>POINTS INDEX</h2>
 
 <% @points.each do |point| %>
-
-	<p> Activity: <%= link_to(Activity.find(point.activity_id).activity, point_path(point.id)) %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
-	
+	<% if Activity.exists?(point.activity_id) %>
+		<p> Activity: <%= link_to(Activity.find(point.activity_id).activity, point_path(point.id)) %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
+	<% end %>
 <% end %>
 
 <h2>POINTS TOTALS</h2>

@@ -67,7 +67,20 @@ class PointsController < ApplicationController
   end
 
   def edit
+    @point = Point.find params[:id]
   end
+
+  def update
+    point = Point.find params[:id]
+    point.update point_params
+    redirect_to point
+  end
+
+  def destroy
+    point = Point.find params[:id]
+    point.destroy
+    redirect_to points_path
+  end 
 
   private
 

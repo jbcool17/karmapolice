@@ -1,7 +1,8 @@
 <h2>Activities INDEX</h2>
 
 <% @activities.each do |activity| %>
-
-	<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %></p>
+	<% if User.exists?(activity.user_id) %>
+		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %></p>
+	<% end %>
 	
 <% end %>
