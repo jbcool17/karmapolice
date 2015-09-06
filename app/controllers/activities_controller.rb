@@ -1,10 +1,10 @@
 class ActivitiesController < ApplicationController
+
+  before_action :require_user, only: [:index, :show, :new, :update, :destroy]
+
   def index
   	@activities = Activity.all
   	@users = User.all
-
-
-
   end
 
   def show

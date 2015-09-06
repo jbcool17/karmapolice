@@ -1,4 +1,6 @@
 class PointsController < ApplicationController
+  before_action :require_user, only: [:index, :show, :new, :update, :destroy]
+  
   def index
   	@points = Point.all
   	@activities = Activity.all

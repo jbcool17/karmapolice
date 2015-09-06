@@ -1,25 +1,25 @@
 User.destroy_all
-
-u1 = User.create :email => 'john@user.com', :name => 'john'
-u2 = User.create :email => 'jackie@user.com', :name => 'jackie'
-u3 = User.create :email => 'cheryl@user.com', :name => 'cheryl'
-u4 = User.create :email => 'joe@user.com', :name => 'joe'
-u5 = User.create :email => 'lisa@user.com', :name => 'lisa'
-u6 = User.create :email => 'miles@user.com', :name => 'miles'
-u7 = User.create :email => 'steph@user.com', :name => 'steph'
-u8 = User.create :email => 'justin@user.com', :name => 'justin'
-u9 = User.create :email => 'nate@user.com', :name => 'nate'
-u10 = User.create :email => 'char@user.com', :name => 'char'
+# needs password
+u1 = User.create :email => 'john@user.com', :name => 'john', :password => 'duck'
+u2 = User.create :email => 'jackie@user.com', :name => 'jackie', :password => 'duck'
+u3 = User.create :email => 'cheryl@user.com', :name => 'cheryl', :password => 'duck'
+u4 = User.create :email => 'joe@user.com', :name => 'joe', :password => 'duck'
+u5 = User.create :email => 'lisa@user.com', :name => 'lisa', :password => 'duck'
+u6 = User.create :email => 'miles@user.com', :name => 'miles', :password => 'duck'
+u7 = User.create :email => 'steph@user.com', :name => 'steph', :password => 'duck'
+u8 = User.create :email => 'justin@user.com', :name => 'justin', :password => 'duck'
+u9 = User.create :email => 'nate@user.com', :name => 'nate', :password => 'duck'
+u10 = User.create :email => 'char@user.com', :name => 'char', :password => 'duck'
 
 
 Activity.destroy_all
 
-a1 = Activity.create :activity => 'John surfed a wave', :user_id => u1.id
-a2 = Activity.create :activity => 'helped a person', :user_id => u2.id
-a3 = Activity.create :activity => 'made some opinions', :user_id => u4.id
-a4 = Activity.create :activity => 'made a presentation', :user_id => u5.id
-a5 = Activity.create :activity => 'sang a song', :user_id => u10.id
-a6 = Activity.create :activity => 'played guitar', :user_id => u1.id
+a1 = Activity.create :activity => 'John Surfing', :user_id => u1.id, :description => 'Surfed a narly wave.'
+a2 = Activity.create :activity => 'Nursing', :user_id => u2.id, :description => 'Helped a person.'
+a3 = Activity.create :activity => 'Opinions', :user_id => u3.id, :description => 'Questioned everything that when one during the day.'
+a4 = Activity.create :activity => 'Presentation', :user_id => u6.id, :description => 'Talked about his new app.'
+a5 = Activity.create :activity => 'Singing', :user_id => u10.id, :description => 'Did a set at a wedding.'
+a6 = Activity.create :activity => 'Guitar Preformance', :user_id => u1.id, :description => 'Played some songs at the venue.'
 
 Point.destroy_all
 
