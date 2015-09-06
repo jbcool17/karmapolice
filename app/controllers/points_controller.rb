@@ -4,6 +4,12 @@ class PointsController < ApplicationController
   	@activities = Activity.all
   	@users = User.all
 
+     #Gets all activity ids
+    @activity_ids = []
+    @activities.each do |id|
+      @activity_ids << id.id
+    end
+
     @point_totals = {}
       @activity_ids.each do |x|
         p = Point.where(:activity_id => x)

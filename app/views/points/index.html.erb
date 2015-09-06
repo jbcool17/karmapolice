@@ -8,8 +8,5 @@
 
 <h2>POINTS TOTALS</h2>
 <h3>With Users</h3>
-<% @point_totals.each do |activity, total| %>
 
-	<p>The user - <%= link_to(User.find(Activity.find(activity).user_id).name, point_path(Point.where(:activity_id => activity).first)) %>, recieved a total of <%= total %> points for their activity of <%= Activity.find(activity).activity %>.</p>
-
-<% end %>
+<p>figuire out later oye</p>
