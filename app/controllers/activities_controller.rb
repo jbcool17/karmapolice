@@ -6,21 +6,44 @@ class ActivitiesController < ApplicationController
   	@activities = Activity.all
   	@users = User.all
     @points = Point.all
-    @current = @current_user
+    @current = current_user
 
     @all_points_current_user = @points.where(:activity_user_id => @current)
+
+    @activity_ids = []
+    @activities.each do |id|
+      @activity_ids << id.id
+    end
+
+    @point_totals = {}
+      @activity_ids.each do |x|
+        p = Point.where(:activity_id => x)
+        @point_totals[x] = 0
+        p.each do |y|
+          @point_totals[x] += y.points
+        end
+      end
+      @point_totals
 
   end
 
   def show
   	@activity = Activity.find params[:id]
-
     @all_points = Point.where(:activity_id => @activity.id)
+    @current = current_user
+
+    @total = 0
+    @all_points.each do |points|
+      @total += points.points
+    end
+
+    
 
   end
 
   def new
     @activity = Activity.new
+
   end
 
   def create

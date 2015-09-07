@@ -64,7 +64,7 @@ class PointsController < ApplicationController
   end
 
   def new
-    @point = Point.new
+    @point = Point.new :activity_id => params[:id]
 
   end
 

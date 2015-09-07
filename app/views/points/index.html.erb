@@ -1,5 +1,12 @@
 <h2>POINTS INDEX</h2>
 
+<h2>Your Points</h2>
+<% @points.each do |point| %>
+	<% if User.find(Activity.find(point.activity_id).user_id).id == @current.id  %>
+		<p> Activity: <%= link_to(Activity.find(point.activity_id).activity, point_path(point.id)) %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
+	<% end %>
+<% end %>
+<hr>
 <h2>Other Points</h2>
 <% @points.each do |point| %>
 	<% if User.exists?(Activity.find(point.activity_id).user_id) && User.find(Activity.find(point.activity_id).user_id).id != @current.id %>
@@ -7,19 +14,3 @@
 		<p> Activity: <%= link_to(Activity.find(point.activity_id).activity, point_path(point.id)) %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
 	<% end %>
 <% end %>
-
-<hr>
-
-<h2>Your Points</h2>
-<% @points.each do |point| %>
-	<% if User.find(Activity.find(point.activity_id).user_id).id == @current.id  %>
-		<p> Activity: <%= link_to(Activity.find(point.activity_id).activity, point_path(point.id)) %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
-	<% end %>
-<% end %>
-<h2>POINTS TOTALS</h2>
-<h3>With Users</h3>
-
-<p>figuire out later oye</p>
-
-
-
