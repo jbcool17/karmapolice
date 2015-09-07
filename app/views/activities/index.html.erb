@@ -5,7 +5,20 @@
 
 <% @activities.each do |activity| %>
 	<% if User.find(activity.user_id).id == @current.id  %>
-		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %></p>
+
+		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %>
+		</p>
+		<p>COUNT: <%= @all_current_user_activities.count %></p>
+		<p>TOTAL: <% @total.each do |x| %>
+			<%= x %>
+			<% if  User.find(activity.user_id).id == @current.id && activity.id == x[0] %>
+				s<p>anything that has current user id with same activity id</p>
+			<% end %>
+		<% end %>
+
+		
+
+		</p>
 	<hr>
 	<% end %>
 	
@@ -15,7 +28,9 @@
 
 <% @activities.each do |activity| %>
 	<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current.id   %>
-		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %></p>
+		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %>
+		<%= link_to "ADD POINTS/COMMENTS", new_point_path %>
+		</p>
 	<hr>
 	<% end %>
 	

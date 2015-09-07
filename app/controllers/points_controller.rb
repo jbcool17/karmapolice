@@ -5,6 +5,7 @@ class PointsController < ApplicationController
   	@points = Point.all
   	@activities = Activity.all
   	@users = User.all
+    @current = @current_user
 
      #Gets all activity ids
     @activity_ids = []
@@ -60,6 +61,7 @@ class PointsController < ApplicationController
 
   def new
     @point = Point.new
+    
 
   end
 

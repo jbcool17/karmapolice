@@ -1,15 +1,15 @@
 User.destroy_all
 # needs password
-u1 = User.create :email => 'john@user.com', :name => 'john', :password => 'duck'
-u2 = User.create :email => 'jackie@user.com', :name => 'jackie', :password => 'duck'
-u3 = User.create :email => 'cheryl@user.com', :name => 'cheryl', :password => 'duck'
-u4 = User.create :email => 'joe@user.com', :name => 'joe', :password => 'duck'
-u5 = User.create :email => 'lisa@user.com', :name => 'lisa', :password => 'duck'
-u6 = User.create :email => 'miles@user.com', :name => 'miles', :password => 'duck'
-u7 = User.create :email => 'steph@user.com', :name => 'steph', :password => 'duck'
-u8 = User.create :email => 'justin@user.com', :name => 'justin', :password => 'duck'
-u9 = User.create :email => 'nate@user.com', :name => 'nate', :password => 'duck'
-u10 = User.create :email => 'char@user.com', :name => 'char', :password => 'duck'
+u1 = User.create :email => 'john@user.com', :name => 'John', :password => 'duck'
+u2 = User.create :email => 'jackie@user.com', :name => 'Jackie', :password => 'duck'
+u3 = User.create :email => 'cheryl@user.com', :name => 'Cheryl', :password => 'duck'
+u4 = User.create :email => 'joe@user.com', :name => 'Joe', :password => 'duck'
+u5 = User.create :email => 'lisa@user.com', :name => 'Lisa', :password => 'duck'
+u6 = User.create :email => 'miles@user.com', :name => 'Miles', :password => 'duck'
+u7 = User.create :email => 'steph@user.com', :name => 'Steph', :password => 'duck'
+u8 = User.create :email => 'justin@user.com', :name => 'Justin', :password => 'duck'
+u9 = User.create :email => 'nate@user.com', :name => 'Nate', :password => 'duck'
+u10 = User.create :email => 'char@user.com', :name => 'Char', :password => 'duck'
 
 
 Activity.destroy_all

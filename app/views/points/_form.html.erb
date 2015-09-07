@@ -1,7 +1,14 @@
+<%= @point.points %>
+
 <div class="point">
+
+
 <%= form_for(@point) do |f| %>
 	<p>
 	<label>Activity: </label><%= f.select :activity_id, Activity.all.map { |activity| [activity.activity,  activity.id] }, :include_blank => true %>
+	</p>
+
+
 	</p>
 
 	<p>

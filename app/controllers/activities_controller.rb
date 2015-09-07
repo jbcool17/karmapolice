@@ -5,8 +5,33 @@ class ActivitiesController < ApplicationController
   def index
   	@activities = Activity.all
   	@users = User.all
-
     @current = @current_user
+
+    @all_current_user_activities = @activities.where(:user_id => @current)
+    
+    # @current_point_totals = {}
+    # @all_current_user_activities.each do |activity|
+    #   p = @current_point_totals[activity.id] = 0
+    #   p.each do |x|
+    #     @current_point_totals[activity.id] += Point.find
+
+    # end
+     #Gets all activity ids
+    
+    @activity_ids = []
+    @activities.each do |id|
+      @activity_ids << id.id
+    end
+
+    @point_totals = {}
+      @activity_ids.each do |x|
+        p = Point.where(:activity_id => x)
+        @point_totals[x] = 0
+        p.each do |y|
+          @point_totals[x] += y.points
+        end
+      end
+      @total = @point_totals
   end
 
   def show
