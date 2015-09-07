@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.create user_params
     if @user.save # Check if the user is valid (per the validations in the model)
-      session[:user_id] = @user.id
+      session[:user_id] = @user.id #logs user in after creation/save
       redirect_to activities_path
     else
       render :new
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find params[:id]
+    
   end
 
   def update
