@@ -23,6 +23,10 @@ class PointsController < ApplicationController
       end
       @total = @point_totals
 
+    
+
+
+
   end
 
 
@@ -61,13 +65,12 @@ class PointsController < ApplicationController
 
   def new
     @point = Point.new
-    
 
   end
 
   def create
     point = Point.create point_params
-    redirect_to point
+    redirect_to activity_path(point.activity_id)
   end
 
   def edit
@@ -89,7 +92,7 @@ class PointsController < ApplicationController
   private
 
   def point_params
-    params.require(:point).permit(:activity_id, :voting_user_id, :points)
+    params.require(:point).permit(:activity_id, :voting_user_id, :points, :activity_user_id, :comment)
   end
 
 end

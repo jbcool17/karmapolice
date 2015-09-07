@@ -4,7 +4,7 @@
 
 <% @all_points.each do |x| %>
 
-	<p>Points: <%= x.points %> User Gave Points: <%= User.find(x.voting_user_id).name %></p>
+	<%= x.voting_user_id %> <%= x.points %>
 	
 <% end %>
 

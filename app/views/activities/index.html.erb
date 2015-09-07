@@ -2,26 +2,21 @@
 
 <p><%= @current.name %>, here are all your activities.</p>
 
-
 <% @activities.each do |activity| %>
 	<% if User.find(activity.user_id).id == @current.id  %>
 
-		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %>
-		</p>
-		<p>COUNT: <%= @all_current_user_activities.count %></p>
-		<p>TOTAL: <% @total.each do |x| %>
-			<%= x %>
-			<% if  User.find(activity.user_id).id == @current.id && activity.id == x[0] %>
-				s<p>anything that has current user id with same activity id</p>
+		<h4>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %></h4>
+		<h5>POINTS FROM OTHER USERS</h5> 
+		<% @all_points_current_user.each do |point| %>
+			<% if activity.id == point.activity_id %>
+				From: <%= User.find(point.voting_user_id).name %> ||
+				Points Given: <%= point.points %> ||
+				Comment: <%= point.comment %>
+				</p>
 			<% end %>
 		<% end %>
-
-		
-
-		</p>
-	<hr>
+		<hr>
 	<% end %>
-	
 <% end %>
 
 <h2>Other User Activities List</h2>
