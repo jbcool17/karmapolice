@@ -5,9 +5,10 @@
 <p>TOTAL POINTS: <%= @total %></p>
 
 <h3>Voting Users </h3>
+
 <% @all_points.each do |x| %>
 	
-<p>User: <%= User.find(x.voting_user_id).name %> || Comment: <%= x.comment %> || Points Given: <%= x.points %></p>
+	<p>User: <%= User.find(x.voting_user_id).name %> || Comment: <%= x.comment %> || Points Given: <%= x.points %></p>
 
 	
 <% end %>

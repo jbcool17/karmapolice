@@ -17,6 +17,7 @@
 
 
 <h2>Other User Activities List</h2>
+<p>Activities Count: <%= @activities.count %></p>
 <p>Add points and comments to the activities.</p>
 <% @activities.each do |activity| %>
 	<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current.id   %>
