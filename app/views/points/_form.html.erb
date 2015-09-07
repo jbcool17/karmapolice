@@ -21,7 +21,7 @@
 	
 	<p>
 	<label>Points to Add: </label>
-		<%= f.select :points, ((0..500).map {|i| [i,i] } << ["No limit",nil]) %>
+		<%= f.select :points, ((0..10).map {|i| [i,i] } << ["No limit",nil]) %>
 	</p>
 
 	<%= f.submit %>

@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
   def index
+  	@points = Point.all
+  	@users = User.all
+
   	if session[:user_id]
       @user = User.find session[:user_id]
       @current_user = User.find session[:user_id]
     end
   end
-
 end

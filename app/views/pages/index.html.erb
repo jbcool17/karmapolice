@@ -1,3 +1,15 @@
 <h1>Welcome the Karma Police</h1>
 <p>a peer based voting/ranking system.</p>
 
+<%= @users.count %>
+
+<% @users.each do |user| %>
+	<% if Point.where(:activity_user_id => user.id).present? %>
+		<p>User Name: <%= user.name %> || 
+		<% Point.where(:activity_user_id => user.id).each do |stat| %>
+			Activity: <%= Activity.find(stat.activity_id).activity %> Points Recieved: <%= stat.points %>
+
+		<% end %>
+		</p>
+	<% end %>
+<% end %>
