@@ -12,7 +12,11 @@
 #
 
 class User < ActiveRecord::Base
-	has_many :activities
 	has_secure_password
+	has_many :activities
+	
+
+	validates :email, :presence => true, :uniqueness => true
+	validates :name, :presence => true, :length => { :minimum => 3 }
 	
 end

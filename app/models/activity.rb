@@ -13,4 +13,9 @@
 
 class Activity < ActiveRecord::Base
 	has_many :points
+
+	validates :activity, :presence => true, :uniqueness => true
+	validates :description, :presence => true, :length => { :minimum => 3 }
+	validates :user_id, :presence => true
+	validates :created_by_id, :presence => true
 end

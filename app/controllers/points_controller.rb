@@ -1,5 +1,5 @@
 class PointsController < ApplicationController
-  before_action :require_user, only: [:index, :show, :new, :update, :destroy]
+  before_action :require_user, only: [:index, :show, :new, :update]
   
   def index
   	@points = Point.all

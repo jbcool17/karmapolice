@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :require_user, only: [:index, :show, :update, :destroy]
+  #before_action :require_user, only: [:show, :update, :destroy]
+  before_action :check_if_logged_in, :only => [:index, :edit, :update]
+
 
   def index
   	@users = User.all
@@ -16,11 +18,12 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.create user_params
+
     if @user.save 
       session[:user_id] = @user.id 
       redirect_to '/' 
     else 
-      redirect_to '/signup' 
+      render :new 
     end
 
 	  #redirect_to user
@@ -31,9 +34,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find params[:id]
-    user.update user_params
-    redirect_to user
+    @user = current_user
+    if @user.update user_params
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -47,4 +53,10 @@ class UsersController < ApplicationController
   def user_params
   	params.require(:user).permit(:email, :name, :password, :password_confirmation)
   end
+
+  def check_if_logged_in
+    redirect_to root_path unless @current_user.present?
+  end
+
+
 end

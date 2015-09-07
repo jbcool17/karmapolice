@@ -1,4 +1,15 @@
 <div class="user">
+
+<% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li>
+        <%= msg %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+
 <%= form_for(@user) do |f| %>
 	<p>
 		<%= f.label :email %>

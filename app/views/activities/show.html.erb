@@ -1,7 +1,8 @@
 <h2>Activity: <%= @activity.activity %></h2>
 
-<p>Person who preformed activity: <%= User.find(@activity.user_id).name %></p>
 
+<p>Person who preformed activity: <%= User.find(@activity.user_id).name %></p>
+<p><%= @activity.description %></p>
 <p>TOTAL POINTS: <%= @total %></p>
 
 <h3>Voting Users </h3>

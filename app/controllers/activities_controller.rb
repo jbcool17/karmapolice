@@ -36,19 +36,20 @@ class ActivitiesController < ApplicationController
     @all_points.each do |points|
       @total += points.points
     end
-
-    
-
   end
 
   def new
     @activity = Activity.new
-
   end
 
   def create
-    activity = Activity.create activity_params
-    redirect_to activity
+    @activity = Activity.create activity_params
+    if @activity.save # Check if the user is valid (per the validations in the model)
+      redirect_to root_path
+    else
+      render :new
+    end
+    #redirect_to activity
   end
 
   def edit
@@ -70,6 +71,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:activity, :user_id)
+    params.require(:activity).permit(:activity, :user_id, :description, :created_by_id)
   end
 end
