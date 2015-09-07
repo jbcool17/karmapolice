@@ -1,6 +1,6 @@
 User.destroy_all
 # needs password
-u1 = User.create :email => 'john@user.com', :name => 'John', :password => 'duck'
+u1 = User.create :email => 'john@user.com', :name => 'John', :password => 'duck', :admin => true
 u2 = User.create :email => 'jackie@user.com', :name => 'Jackie', :password => 'duck'
 u3 = User.create :email => 'cheryl@user.com', :name => 'Cheryl', :password => 'duck'
 u4 = User.create :email => 'joe@user.com', :name => 'Joe', :password => 'duck'
@@ -14,12 +14,12 @@ u10 = User.create :email => 'char@user.com', :name => 'Char', :password => 'duck
 
 Activity.destroy_all
 
-a1 = Activity.create :activity => 'John Surfing', :user_id => u1.id, :description => 'Surfed a narly wave.'
-a2 = Activity.create :activity => 'Nursing', :user_id => u2.id, :description => 'Helped a person.'
-a3 = Activity.create :activity => 'Opinions', :user_id => u3.id, :description => 'Questioned everything that when one during the day.'
-a4 = Activity.create :activity => 'Presentation', :user_id => u6.id, :description => 'Talked about his new app.'
-a5 = Activity.create :activity => 'Singing', :user_id => u10.id, :description => 'Did a set at a wedding.'
-a6 = Activity.create :activity => 'Guitar Preformance', :user_id => u1.id, :description => 'Played some songs at the venue.'
+a1 = Activity.create :activity => 'John Surfing', :user_id => u1.id, :created_by_id => u3.id, :description => 'Surfed a narly wave.'
+a2 = Activity.create :activity => 'Nursing', :user_id => u2.id, :created_by_id => u6.id, :description => 'Helped a person.'
+a3 = Activity.create :activity => 'Opinions', :user_id => u3.id, :created_by_id => u4.id, :description => 'Questioned everything that when one during the day.'
+a4 = Activity.create :activity => 'Presentation', :user_id => u6.id, :created_by_id => u1.id, :description => 'Talked about his new app.'
+a5 = Activity.create :activity => 'Singing', :user_id => u10.id, :created_by_id => u8.id, :description => 'Did a set at a wedding.'
+a6 = Activity.create :activity => 'Guitar Preformance', :user_id => u1.id, :created_by_id => u9.id, :description => 'Played some songs at the venue.'
 
 Point.destroy_all
 

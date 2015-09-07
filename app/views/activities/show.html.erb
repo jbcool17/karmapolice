@@ -12,8 +12,9 @@
 	
 <% end %>
 <p></p>
-<%=  %>
-<% if @current.id != @activity.user_id %>
+<p>Created by: <%= User.find(@activity.created_by_id).name %></p>
+
+<% if @current.id != @activity.user_id || @current.admin? %>
 	<%= link_to 'Edit', edit_activity_path(@activity) %>
 	<%= link_to "Delete", @activity, :method => 'delete', data: {confirm: 'Are you sure?'} %>
 <% end %>

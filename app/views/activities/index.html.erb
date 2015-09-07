@@ -4,32 +4,10 @@
 <% if Activity.where(:user_id => @current.id).count >= 1 %>
 	<% @activities.each do |activity| %>
 	
-
 		<% if User.find(activity.user_id).id == @current.id %>
-
-			<h4>User: <%= User.find(activity.user_id).name %> || 
-			Activity: <%= link_to(activity.activity, activity_path(activity)) %></h4>
-				<% @point_totals.each do |x| %>
-					<% if activity.id == x.first %>
-						<p>TOTAL POINTS: <%= x.second %></p>
-					<% end %>
-				<% end %>
-			<h5>Voting User Stats</h5> 
-			<% @all_points_current_user.each do |point| %>
-				<% if activity.id == point.activity_id %>
-					From: <%= User.find(point.voting_user_id).name %> ||
-					Points Given: <%= point.points %> ||
-					Comment: <%= point.comment %>
-					</p>
-				<% end %>
-			<% end %>
-			
-			<hr>	
-			
-
-
-		<% end %>
-			
+			<h4>Activity: <%= activity.activity %> <%= link_to('View Stats', activity_path(activity)) %></h4>
+		<% end %>	
+		
 	<% end %>
 <% else %>
 	<p>Looks like you haven't done any activities yet. Have the others add them for you.</p>

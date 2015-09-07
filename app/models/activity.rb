@@ -2,12 +2,13 @@
 #
 # Table name: activities
 #
-#  id          :integer          not null, primary key
-#  activity    :text
-#  user_id     :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  description :text
+#  id            :integer          not null, primary key
+#  activity      :text
+#  user_id       :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  description   :text
+#  created_by_id :integer
 #
 
 class Activity < ActiveRecord::Base
