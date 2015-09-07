@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   #before_action :require_user, only: [:show, :update, :destroy]
   before_action :check_if_logged_in, :only => [:index, :edit, :update]
+  before_action :check_if_admin, :only => [:index]
 
 
   def index
@@ -18,12 +19,10 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.create user_params
-
-    if @user.save 
-      session[:user_id] = @user.id 
-      redirect_to '/' 
-    else 
-      render :new 
+    if @user.save # Check if the user is valid (per the validations in the model)
+      redirect_to root_path
+    else
+      render :new
     end
 
 	  #redirect_to user
@@ -34,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
+    @user = @current_user
     if @user.update user_params
       redirect_to root_path
     else

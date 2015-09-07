@@ -1,10 +1,10 @@
 <h2>Activities List</h2>
 
-<p><%= @current.name %>, here are all your activities.</p>
-<% if Activity.where(:user_id => @current.id).count >= 1 %>
+<p><%= @current_user.name %>, here are all your activities.</p>
+<% if Activity.where(:user_id => @current_user).count >= 1 %>
 	<% @activities.each do |activity| %>
 	
-		<% if User.find(activity.user_id).id == @current.id %>
+		<% if User.find(activity.user_id).id == @current_user.id %>
 			<h4>Activity: <%= activity.activity %> <%= link_to('View Stats', activity_path(activity)) %></h4>
 		<% end %>	
 		
@@ -20,8 +20,9 @@
 <p>Activities Count: <%= @activities.count %></p>
 <p>Add points and comments to the activities.</p>
 <% @activities.each do |activity| %>
-	<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current.id   %>
+	<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current_user.id   %>
 		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %>
+		<%= link_to('View Stats', activity_path(activity)) %>
 		<%= link_to "ADD POINTS/COMMENTS", new_point_path %>
 		</p>
 	<hr>

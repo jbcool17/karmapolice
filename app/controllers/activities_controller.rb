@@ -1,12 +1,12 @@
 class ActivitiesController < ApplicationController
 
-  before_action :require_user, only: [:index, :show, :new, :update, :destroy]
+  #before_action :require_user, only: [:index, :show, :new, :update, :destroy]
 
   def index
   	@activities = Activity.all
   	@users = User.all
     @points = Point.all
-    @current = current_user
+    @current_user = User.find session[:user_id]
 
     @all_points_current_user = @points.where(:activity_user_id => @current)
 
@@ -30,7 +30,7 @@ class ActivitiesController < ApplicationController
   def show
   	@activity = Activity.find params[:id]
     @all_points = Point.where(:activity_id => @activity.id)
-    @current = current_user
+    @current = @current_user
 
     @total = 0
     @all_points.each do |points|
