@@ -11,7 +11,7 @@
 
 	<p>
 
-	<label>From User :</label><%= f.select :voting_user_id, [[current_user.name,  current_user.id]] %>
+	<label>From User :</label><%= f.select :voting_user_id, [[@current_user.name,  @current_user.id]] %>
 	</p>
 
 	<p>

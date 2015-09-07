@@ -1,27 +1,31 @@
 class PointsController < ApplicationController
-  before_action :require_user, only: [:index, :show, :new, :update]
+  #before_action :check_if_admin, :only => []
+  
   
   def index
   	@points = Point.all
   	@activities = Activity.all
   	@users = User.all
-    @current = @current_user
+    @current_user = User.find session[:user_id]
+
+
+
 
      #Gets all activity ids
-    @activity_ids = []
-    @activities.each do |id|
-      @activity_ids << id.id
-    end
+    # @activity_ids = []
+    # @activities.each do |id|
+    #   @activity_ids << id.id
+    # end
 
-    @point_totals = {}
-      @activity_ids.each do |x|
-        p = Point.where(:activity_id => x)
-        @point_totals[x] = 0
-        p.each do |y|
-          @point_totals[x] += y.points
-        end
-      end
-      @total = @point_totals
+    # @point_totals = {}
+    #   @activity_ids.each do |x|
+    #     p = Point.where(:activity_id => x)
+    #     @point_totals[x] = 0
+    #     p.each do |y|
+    #       @point_totals[x] += y.points
+    #     end
+    #   end
+    #   @total = @point_totals
 
     
 
@@ -59,13 +63,11 @@ class PointsController < ApplicationController
     end
     @who_voted
 
-
-
   end
 
   def new
     @point = Point.new :activity_id => params[:id]
-
+    @current_user = User.find session[:user_id]
   end
 
   def create
@@ -93,6 +95,10 @@ class PointsController < ApplicationController
 
   def point_params
     params.require(:point).permit(:activity_id, :voting_user_id, :points, :activity_user_id, :comment)
+  end
+
+  def check_if_admin
+    redirect_to root_path unless @current_user.present? && @current_user.admin?
   end
 
 end

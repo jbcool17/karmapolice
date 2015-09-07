@@ -30,7 +30,7 @@ class ActivitiesController < ApplicationController
   def show
   	@activity = Activity.find params[:id]
     @all_points = Point.where(:activity_id => @activity.id)
-    @current = @current_user
+    @current_user = User.find session[:user_id]
 
     @total = 0
     @all_points.each do |points|

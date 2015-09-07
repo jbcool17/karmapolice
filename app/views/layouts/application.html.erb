@@ -10,19 +10,19 @@
 
 	<nav>
 		<%= link_to 'Home', '/' %>
-		
+		<% if @current_user && @current_user.admin? %> 
 			<%= link_to 'USERS', users_path %>
 			<%= link_to 'ACTIVITIES', activities_path %>
 			<%= link_to 'POINTS', points_path %>
 			<%= link_to "ADD POINTS", new_point_path %>
-		
+		<% end %>
 		
 		<% if @current_user %> 
 		  <ul> 
 		    <li>Welcome <%= @current_user.name %></li> ||
 		    <%= link_to 'Activities', activities_path %> ||
 		    <li><%= link_to 'Create New Activity', new_activity_path %></li> ||
-		    
+		
 		    <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %>
 		    
 		  </ul> 

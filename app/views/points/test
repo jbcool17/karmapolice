@@ -1,0 +1,14 @@
+
+<% @points.each do |point| %>
+	<% if User.find(point.activity_user_id).id == @current_user.id  %>
+		<p> Activity: <%= link_to(Activity.find(point.activity_id).activity, point_path(point.id)) %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
+	
+<% end %>
+<hr>
+<h2>Other Points</h2>
+<% @points.each do |point| %>
+	<% if User.exists?(Activity.find(point.activity_id).user_id) && User.find(Activity.find(point.activity_id).user_id).id != @current_user.id %>
+
+		<p> Activity: <%= link_to(Activity.find(point.activity_id).activity, point_path(point.id)) %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
+	<% end %>
+<% end %>
