@@ -7,10 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	
 	<nav>
 		<ul>
-		 
+		<li id="welcome">Welcome <%= @current_user.name  %></li>	 
 		<% if @current_user && @current_user.admin? %> 
 			 <li><%= link_to 'USERS', users_path %> </li>
 			 <li><%= link_to 'ACTIVITIES', activities_path %></li>
@@ -19,7 +19,7 @@
 		<% end %>
 		
 		<% if @current_user %> 
-		  	<li>Welcome <%= @current_user.name %></li>
+		  	
 		  	<li><%= link_to 'Home', '/' %></li>
 		   	<li><%= link_to 'Activities', activities_path %></li>
 		    <li><%= link_to 'Create New Activity', new_activity_path %></li> 

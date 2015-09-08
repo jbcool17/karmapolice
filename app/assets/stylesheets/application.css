@@ -14,13 +14,30 @@
  *= require_self
  */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
-html { background: white;}
+
+
 body {
-	font-family: 'Open Sans', sans-serif;sans-serif;\
+	font-family: 'Open Sans', sans-serif;sans-serif;
+	
 }
 
+/*body::after {
+	content: "";
+	background-image: url('http://news.nationalgeographic.com/content/dam/news/photos/000/786/78625.ngsversion.1422285259310.jpg');
+	opacity: 0.1;
+	top: 0;
+  	left: 0;
+  	bottom: 0;
+  	right: 0;
+  	position: absolute;
+  	-webkit-filter: blur(5px);
+  	z-index: -1; 
+
+}*/
+
+
 nav {
-	background: #2ecc71;
+	background-color: #2ecc71;
 	width: 100%;
 	position: fixed;
 	top:0px;
@@ -35,6 +52,14 @@ nav ul {
 
 nav li {
 	display: inline;
+
+}
+
+
+#welcome::after {
+	
+
+	
 }
 
 nav a {
@@ -43,9 +68,7 @@ nav a {
 
 }
 nav a::before {
-	content: '//';
-	
-
+	content: ' ';
 }
 
 nav a:hover {
@@ -60,7 +83,7 @@ nav a:hover {
 }
 
 .new {
-	max-width: 500px;
+	/*max-width: 500px;*/
 	
 }
 
