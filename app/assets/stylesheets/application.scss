@@ -125,13 +125,16 @@ textarea {
   width: 100%;
   border: none;
   height: auto;
-  padding: 15px;
   outline: 0;
   margin-bottom: 1.2em;
   border-radius: .3em;
   border-bottom: 3px solid rgba(0,0,0, 0.05);
   background-color: #e8eeef;
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  
 }
 
 label {
@@ -150,9 +153,9 @@ label {
 
 /* Attribute Selectors ------------- */
 
-.form-contact {
+form {
   padding: 20px 24px;
-  background: #f4f7f8;
+  background: rgba(0,0,0,.01);
 }
 
 #container {
@@ -186,14 +189,15 @@ a[target="_blank"] {
 }
 
 .btn {
+
   cursor: pointer;
   font-size: .875em;
   font-weight: 400;
-  color: #fff;
-  padding-left: 20px;
-  padding-right: 20px;
+  color: #fff;  
   text-transform: uppercase;
   background-color: #2ecc71;
+  margin-top:10px;
+
 
 }
 
@@ -202,7 +206,7 @@ a[target="_blank"] {
 }
 
 .default {
-  
+
 
 }
 

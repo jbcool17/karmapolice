@@ -5,7 +5,7 @@ class GraphController < ApplicationController
     @points.each do |x|
       @array << x.points
     end
-
+    
 
   end
 
