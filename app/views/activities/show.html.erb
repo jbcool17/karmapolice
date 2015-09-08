@@ -8,9 +8,10 @@
 <h3>Voting Users </h3>
 
 <% @all_points.each do |x| %>
-	
+	<div style="background-color: <%= cycle('rgba(192,192,192,.2)', 'rgba(192,192,192,.5)') %>" class="every_other">
 	<p><%= User.find(x.voting_user_id).name %> gave you <%= pluralize(x.points, '/ 10 Point') %></p> 
 	<p> Comment: <%= x.comment %> </p>
+	</div>
 	
 <% end %>
 

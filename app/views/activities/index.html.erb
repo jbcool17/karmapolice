@@ -5,10 +5,11 @@
 	<% @activities.each do |activity| %>
 	
 		<% if User.find(activity.user_id).id == @current_user.id %>
-			<h4>Activity: <%= activity.activity %> <%= link_to('View Stats', activity_path(activity)) %></h4>
+			<h4 style="background-color: <%= cycle('rgba(192,192,192,.2)', 'rgba(192,192,192,.5)') %>" class="every_other">Activity: <%= activity.activity %> || <%= link_to('View Stats', activity_path(activity)) %></h4>
 		<% end %>	
 		
 	<% end %>
+	<hr>
 <% else %>
 	<p>Looks like you haven't done any activities yet. Have the others add them for you.</p>
 <% end %>
@@ -21,7 +22,7 @@
 <p>Add points and comments to the activities.</p>
 <% @activities.each do |activity| %>
 	<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current_user.id   %>
-		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %>
+		<p style="background-color: <%= cycle('rgba(192,192,192,.2)', 'rgba(192,192,192,.5)') %>" class="every_other" >User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %>
 		<%= link_to('View Stats', activity_path(activity)) %>
 		</p>
 	<hr>

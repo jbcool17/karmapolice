@@ -23,7 +23,7 @@
 		<%= f.select :points, ((0..10).map {|i| [i,i] } << ["No limit",nil]) %>
 	</p>
 
-	<%= f.submit %>
+	<%= f.submit 'SUBMIT',  :class => "btn default" %>
 <% end %>
 
 </div>

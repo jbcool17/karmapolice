@@ -46,7 +46,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.create activity_params
     if @activity.save # Check if the user is valid (per the validations in the model)
-      redirect_to activity
+      redirect_to activity_path(@activity)
     else
       render :new
     end

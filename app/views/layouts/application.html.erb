@@ -19,7 +19,7 @@
 		<% end %>
 		
 		<% if @current_user %> 
-		  	<li id="welcome">Welcome <%= @current_user.name  %></li>	 
+		  	<li id="welcome">Welcome <%= @current_user.name  %> || </li>	 
 		  	<li><%= link_to 'Home', '/' %></li>
 		   	<li><%= link_to 'Activities', activities_path %></li>
 		    <li><%= link_to 'Create New Activity', new_activity_path %></li> 
@@ -36,13 +36,13 @@
 
 	
 	<div class="container">
-
-		<%= yield %>
 		<% if flash[:message].present? %>
-  			<p><%= flash[:message] %></p>
+  			<p id="errors"><%= flash[:message] %></p>
 		<% end %>
+		
+		<%= yield %>
 	</div>
 
-<footer><p>TEST</p></footer>
+<footer><p>Karma Po Po</p></footer>
 </body>
 </html>
