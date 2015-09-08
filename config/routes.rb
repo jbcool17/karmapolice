@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   root 'pages#index'
   
   get 'signup' => 'users#new'
@@ -11,4 +13,8 @@ Rails.application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+
+  
+  get 'graph/index'
+  get 'graph/data', :defaults => { :format => 'json' }
 end

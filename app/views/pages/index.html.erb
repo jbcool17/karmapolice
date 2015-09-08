@@ -1,10 +1,10 @@
 <h1>Welcome the Site</h1>
 <p>a peer based voting/ranking system.</p>
-
+<%= link_to('Graph', graph_index_path) %>
 <h2>CURRENT RANKS</h2>
 <table>
 	    <thead>
-	        <tr class="">
+	        <tr>
 	            <th>ID</th>
 	            <th>OVERALL RANK</th>
 	            <th>NAME</th>
@@ -15,10 +15,10 @@
 	        </tr>
 	    </thead>
 		<% @users.each do |user| %>
-	    	<tbody>
+	    	<tbody >
 	  
 	     		<tr>
-	            	<td><%= user.id %></td>
+	            	<td id="uid"><%= user.id %></td>
 	            	<td> ##</td>
 	            	<td> <%= link_to(user.name, user_path(user.id)) %></td> 
 	            	<td><%= Activity.where(:user_id => user.id).count %></td>
