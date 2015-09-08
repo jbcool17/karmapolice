@@ -19,8 +19,8 @@
 		<% end %>
 		
 		<% if @current_user %> 
-		  	<li id="welcome">Welcome <%= @current_user.name  %> || </li>	 
-		  	<li><%= link_to 'Home', '/' %></li>
+		  	<li id="welcome">Welcome <%= @current_user.name  %> </li>	 
+		  	<li><%= link_to(image_tag('home.png'), '/') %></li>
 		   	<li><%= link_to 'Activities', activities_path %></li>
 		    <li><%= link_to 'Create New Activity', new_activity_path %></li> 
 		    <li class='last'>
