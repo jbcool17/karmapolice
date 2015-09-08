@@ -2,14 +2,14 @@
 
 
 <p>Person who preformed activity: <%= User.find(@activity.user_id).name %></p>
-<p><%= @activity.description %></p>
+<p>Description: <%= @activity.description %></p>
 <p>TOTAL POINTS: <%= @total %></p>
 
 <h3>Voting Users </h3>
 
 <% @all_points.each do |x| %>
 	
-	<p><%= User.find(x.voting_user_id).name %> gave you <%= pluralize(x.points, 'point') %> and commented that: <%= x.comment %> </p>
+	<p><%= User.find(x.voting_user_id).name %> gave you <%= pluralize(x.points, '/ 10 Point') %> and commented that: <%= x.comment %> </p>
 
 	
 <% end %>

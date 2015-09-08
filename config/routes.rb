@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'pages#index'
+  root 'pages#index'
   
   get 'signup' => 'users#new'
   resources :users, :points

@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  
   def index
   	@points = Point.all
   	@users = User.all

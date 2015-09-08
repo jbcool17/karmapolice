@@ -18,7 +18,7 @@
 	</p>
 	<p>
 		<%= f.label :description %>: 
-		<%= f.text_area :description, size: "24x6" %>
+		<%= f.text_area :description, size: "40x6" %>
 	</p>
 	<p>
 	<label>Who did this?: </label><%= f.select :user_id, User.all.map { |user| [user.name,  user.id] }, :include_blank => true %>
@@ -26,7 +26,9 @@
 
 	<p>
 	<label>Who are you: </label><%= f.select :created_by_id, [[@current_user.name,  @current_user.id]] %>
+
 	</p>
+
 
 	<%= f.submit %>
 <% end %>

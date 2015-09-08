@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :check_if_logged_in, :only => [:index, :edit, :update]
+  before_action :check_if_logged_in, :only => [:index, :edit, :update, :show, :new, :destroy]
   before_action :check_if_admin, :only => [:index,:show, :edit, :update, :destroy]  
 
 
@@ -45,6 +45,25 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find params[:id]
+
+    activities = Activity.where(:user_id => user)
+    activities.each do |x|
+      y = Activity.find(x.id)
+      y.destroy
+    end
+
+    points = Point.where(:activity_user_id => user)
+    points.each do |x|
+      y = Point.find(x.id)
+      y.destroy
+    end
+
+    points = Point.where(:voting_user_id => user)
+    points.each do |x|
+      y = Point.find(x.id)
+      y.destroy
+    end
+
     user.destroy
     redirect_to users_path
   end
