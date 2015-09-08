@@ -1,12 +1,13 @@
-<h2>Activities List</h2>
+<h2>Your Activities List</h2>
+
+
+	<hr>
 
 <p><%= @current_user.name %>, here are all your activities.</p>
-<% if Activity.where(:user_id => @current_user).count >= 1 %>
-	<% @activities.each do |activity| %>
+<% if @current_user_activities.present? %>
+	<% @current_user_activities.each do |activity| %>
 	
-		<% if User.find(activity.user_id).id == @current_user.id %>
-			<h4 style="background-color: <%= cycle('rgba(192,192,192,.2)', 'rgba(192,192,192,.5)') %>" class="every_other">Activity: <%= activity.activity %> || <%= link_to('View Stats', activity_path(activity)) %></h4>
-		<% end %>	
+		<h4 style="background-color: <%= cycle('rgba(192,192,192,.2)', 'rgba(192,192,192,.5)') %>" class="every_other">Activity: <%= activity.activity %> || <%= link_to('View Stats', activity_path(activity)) %></h4>
 		
 	<% end %>
 	<hr>
@@ -15,18 +16,18 @@
 <% end %>
 
 
-
-
 <h2>Other User Activities List</h2>
+
 <p>Activities Count: <%= @activities.count %></p>
+
 <p>Add points and comments to the activities.</p>
+
 <% @activities.each do |activity| %>
 	<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current_user.id   %>
 		<p style="background-color: <%= cycle('rgba(192,192,192,.2)', 'rgba(192,192,192,.5)') %>" class="every_other" >User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %>
 		<%= link_to('View Stats', activity_path(activity)) %>
 		</p>
 	<hr>
-	<% end %>
-	
+	<% end %>	
 <% end %>
 

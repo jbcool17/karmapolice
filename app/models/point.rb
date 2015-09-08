@@ -13,7 +13,7 @@
 #
 
 class Point < ActiveRecord::Base
-	belongs_to :Activity
+	belongs_to :activities
 
 	#validates :Point, uniqueness: { scope: [:voting_user_id, :activity_id, message: "what up" ] }
 

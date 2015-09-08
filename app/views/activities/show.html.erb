@@ -7,15 +7,23 @@
 
 <h3>Voting Users </h3>
 
-<% @all_points.each do |x| %>
+<% @activity.points.each do |x| %>
 	<div style="background-color: <%= cycle('rgba(192,192,192,.2)', 'rgba(192,192,192,.5)') %>" class="every_other">
 	<p><%= User.find(x.voting_user_id).name %> gave you <%= pluralize(x.points, '/ 10 Point') %></p> 
-	<p> Comment: <%= x.comment %> </p>
+	<div class="comment"> 
+	<h3>Comment/Feedback</h3> 
+	<% if x.comment.present? %>
+		<p> <%= x.comment %></p> 
+	<% else %>
+		<p>No comment here.</p>
+	<% end %>
+	</div>
 	</div>
 	
 <% end %>
 
 <hr>
+
 <p>Activity was Created by: <%= User.find(@activity.created_by_id).name %></p>
 <hr>
 <% if @current_user.id == @activity.created_by_id || @current_user.admin? %>

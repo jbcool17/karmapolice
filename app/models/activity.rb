@@ -13,6 +13,7 @@
 
 class Activity < ActiveRecord::Base
 	has_many :points
+	belongs_to :users
 
 	validates :activity, :presence => true, :uniqueness => true
 	validates :description, :presence => true, :length => { :minimum => 3 }
