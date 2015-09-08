@@ -1,3 +1,33 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+span {
+	color:red;
+}
+
+table {
+    table-layout: fixed;
+    text-align: center;
+
+}
+
+table td {
+	border-right: 1px solid black;
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
+
+table th {
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	padding:10px;
+	background-color: rgba(355, 255, 255, 1);
+	color: black;
+}
+
+table tbody tr:hover {
+	background-color: rgba(254, 219, 3, 1);
+	
+
+}

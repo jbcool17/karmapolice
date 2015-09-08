@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :fetch_current_user
+  before_action :fetch_current_user
 
   private
   def fetch_current_user

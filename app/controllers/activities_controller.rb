@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
 
-  # before_action :check_if_logged_in, :only => [:index, :edit, :update, :show, :new, :destroy]
+  before_action :check_if_logged_in, :only => [:index, :edit, :update, :show, :new, :destroy]
 
   def index
   	@activities = Activity.all
@@ -75,8 +75,8 @@ class ActivitiesController < ApplicationController
     params.require(:activity).permit(:activity, :user_id, :description, :created_by_id)
   end
 
-  # def check_if_logged_in
-  #   redirect_to activities_path unless @current_user.present?
-  # end
+  def check_if_logged_in
+    redirect_to activities_path unless @current_user.present?
+  end
 
 end

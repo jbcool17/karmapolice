@@ -9,7 +9,7 @@
 
 <% @all_points.each do |x| %>
 	
-	<p>User: <%= User.find(x.voting_user_id).name %> || Comment: <%= x.comment %> || Points Given: <%= x.points %></p>
+	<p><%= User.find(x.voting_user_id).name %> gave you <%= pluralize(x.points, 'point') %> and commented that: <%= x.comment %> </p>
 
 	
 <% end %>

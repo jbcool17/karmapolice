@@ -1,15 +1,64 @@
 <h1>Welcome the Karma Police</h1>
 <p>a peer based voting/ranking system.</p>
 
-<%= @users.count %>
+<h3>CURRENT RANKS</h3>
 
 <% @users.each do |user| %>
 	<% if Point.where(:activity_user_id => user.id).present? %>
-		<p>User Name: <%= user.name %> || 
+		<p>Activity Preformed by: <%= user.name %> || 
 		<% Point.where(:activity_user_id => user.id).each do |stat| %>
-			Activity: <%= Activity.find(stat.activity_id).activity %> Points Recieved: <%= stat.points %>
+
+			Activity: <%= Activity.find(stat.activity_id).activity %> // Points Recieved: <span> <%= stat.points %></span> ||
 
 		<% end %>
 		</p>
 	<% end %>
 <% end %>
+
+
+<h2>INDEX OF ALL</h2>
+
+<table>
+	    <thead>
+	        <tr class="">
+	            <th>ID</th>
+	            <th>NAME</th>
+	            <th>EMAIL</th>
+	            <th>ACTIVITY COUNT</th>
+	            <th>TOTAL POINTS</th>
+	        </tr>
+	    </thead>
+		<% @users.each do |user| %>
+	    	<tbody>
+	  
+	     		<tr>
+	            	<td><%= user.id %></td>
+	            	<td> <%= link_to(user.name, user_path(user.id)) %></td> 
+	            	<td><%= user.email %></td>
+	            	<td>
+	            		<% if Activity.where(:user_id => user.id).present? %>
+	            			<% Activity.where(:user_id => user.id).each do |act|  %>
+	            			
+	            				<p> <%= link_to(act.activity, activity_path(act)) %> </p>
+						
+							<% end %>
+						<% else %>
+								<p>No Activities to report.</p>
+	            		<% end %>
+
+	            	</td>
+	            	<td>
+	            		<% if @points_store[user.id] != nil  %>
+		            		<%= @points_store[user.id] %>
+		            	<% else %>   
+		            	<p>No points to report.</p>
+		            	<% end %>
+	            	</td>
+	        	</tr>
+
+	    	</tbody>
+	    <% end %>
+	</table>
+
+
+</div>
