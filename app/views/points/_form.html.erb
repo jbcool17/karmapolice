@@ -4,22 +4,22 @@
 
 <%= form_for(@point) do |f| %>
 	<p>
-	<label>Activity: </label><%= f.select :activity_id, [[Activity.find(params[:activity_id]).activity, Activity.find(params[:activity_id]).id]]%>
+	<label>Activity </label><%= f.select :activity_id, [[Activity.find(params[:activity_id]).activity, Activity.find(params[:activity_id]).id]]%>
 	</p>
 	<p>
-	<label>Activity Preformer: </label><%= f.select :activity_user_id, [[User.find(Activity.find(params[:activity_id]).user_id).name, Activity.find(params[:activity_id]).user_id]]%>
+	<label>Activity Preformer </label><%= f.select :activity_user_id, [[User.find(Activity.find(params[:activity_id]).user_id).name, Activity.find(params[:activity_id]).user_id]]%>
 	</p>
 	<p>
-	<label>From User :</label><%= f.select :voting_user_id, [[@current_user.name,  @current_user.id]] %>
+	<label>From User</label><%= f.select :voting_user_id, [[@current_user.name,  @current_user.id]] %>
 	</p>
 
 	<p>
-		<%= f.label :comment %>:
+		<%= f.label :comment %>
 		<%= f.text_area :comment, size: "24x6" %>
 	</p>
 	
 	<p>
-	<label>Points to Add: </label>
+	<label>Points to Add</label>
 		<%= f.select :points, ((0..10).map {|i| [i,i] } << ["No limit",nil]) %>
 	</p>
 

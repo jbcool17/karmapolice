@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :check_if_logged_in, :only => [:index, :edit, :update, :show, :new, :destroy]
+  before_action :check_if_logged_in, :only => [:index, :edit, :update, :show, :destroy]
   before_action :check_if_admin, :only => [:index,:show, :edit, :update, :destroy]  
 
 

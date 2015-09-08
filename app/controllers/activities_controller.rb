@@ -79,7 +79,7 @@ class ActivitiesController < ApplicationController
   end
 
   def check_if_logged_in
-    redirect_to activities_path unless @current_user.present?
+    redirect_to root_path unless @current_user.present?
   end
 
 end

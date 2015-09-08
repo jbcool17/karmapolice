@@ -1,4 +1,4 @@
-<div class="activity">
+<div class="new">
 
 
 <% if @activity.errors.any? %>
@@ -13,24 +13,20 @@
 
 <%= form_for(@activity) do |f| %>
 	<p>
-		<%= f.label :activity %>: 
+		<%= f.label :activity %>
 		<%= f.text_field :activity %>
 	</p>
 	<p>
-		<%= f.label :description %>: 
+		<%= f.label :description %>
 		<%= f.text_area :description, size: "40x6" %>
 	</p>
 	<p>
-	<label>Who did this?: </label><%= f.select :user_id, User.all.map { |user| [user.name,  user.id] }, :include_blank => true %>
+	Who did this? : <%= f.select :user_id, User.all.map { |user| [user.name,  user.id] }, :include_blank => true %>
 	</p>
-
-	<p>
-	<label>Who are you: </label><%= f.select :created_by_id, [[@current_user.name,  @current_user.id]] %>
-
-	</p>
+	<p>Who are you? : <%= f.select :created_by_id, [[@current_user.name,  @current_user.id]] %></p>
 
 
-	<%= f.submit %>
+	<%= f.submit 'Create Activity', :class => "btn default" %>
 <% end %>
 
 </div>
