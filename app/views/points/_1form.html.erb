@@ -1,15 +1,16 @@
-<%= Activity.find(params[:activity_id]).id %>
+<%= @point.activity_id %>
 
 <div class="point">
 
 
-
 <%= form_for(@point) do |f| %>
 	<p>
-	<label>Activity: </label><%= f.select :activity_id, [[Activity.find(params[:activity_id]).activity, Activity.find(params[:activity_id]).id]]%>
+	<label>Activity: </label><%= f.select :activity_id, Activity.all.map { |activity| [activity.activity,  activity.id] }, :include_blank => true %>
 	</p>
 
+
 	<p>
+
 	<label>From User :</label><%= f.select :voting_user_id, [[@current_user.name,  @current_user.id]] %>
 	</p>
 

@@ -25,10 +25,8 @@
 	</p>
 
 	<p>
-	<label>Who are you: </label><%= f.select :created_by_id, User.all.map { |user| [user.name,  user.id] }, :include_blank => true %>
+	<label>Who are you: </label><%= f.select :created_by_id, [[@current_user.name,  @current_user.id]] %>
 	</p>
-
-	
 
 	<%= f.submit %>
 <% end %>

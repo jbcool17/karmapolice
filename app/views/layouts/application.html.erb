@@ -20,20 +20,19 @@
 		
 		<% if @current_user %> 
 		  
-		    <li>Welcome <%= @current_user.name %></li> ||
-		    <%= link_to 'Activities', activities_path %> ||
-		    <li><%= link_to 'Create New Activity', new_activity_path %></li> <li>||
+		    <li>Welcome <%= @current_user.name %></li>
+		    <%= link_to 'Activities', activities_path %>
+		    <li><%= link_to 'Create New Activity', new_activity_path %></li> 
+		    <li>
 		    <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %> </li>
 		  </ul> 
 		<% else %> 
-		  <ul> 
+		  
 		    <li><%= link_to "Login", 'login' %></a></li> 
 		    <li><%= link_to "Signup", 'signup' %></a></li> 
-		  </ul> 
+		  
 		<% end %>
 	</nav>
-	
-
 
 	<div class="container">
 		<%= yield %>

@@ -23,5 +23,5 @@
 <% end %>
 
 <% if @current_user.id != @activity.user_id || @current_user.admin? %>
-<%= link_to "ADD POINTS/COMMENTS", new_point_path %>
+	<%= link_to "ADD POINTS/COMMENTS",  new_activity_point_path(@activity, @point) %>
 <% end %>

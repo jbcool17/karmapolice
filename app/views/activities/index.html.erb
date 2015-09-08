@@ -23,7 +23,6 @@
 	<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current_user.id   %>
 		<p>User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %>
 		<%= link_to('View Stats', activity_path(activity)) %>
-		<%= link_to "ADD POINTS/COMMENTS", new_point_path %>
 		</p>
 	<hr>
 	<% end %>

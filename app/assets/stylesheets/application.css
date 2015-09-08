@@ -13,6 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	font-family: sans-serif;
+
+}
+
+nav {
+	background: rgba(210,255,82,1);
+	width: 100%;
+	position: absolute;
+	top:0px;
+	left:0px;
+}
 nav ul {
 	list-style: none;
 
@@ -24,7 +37,12 @@ nav li {
 
 nav a {
 	text-decoration: none;
-	color: green;
+	color: black;
+
+}
+nav a::before {
+	content: '//';
+	
 
 }
 
@@ -33,3 +51,10 @@ nav a:hover {
 	font-weight: bold;
 	color:blue;
 }
+
+.container {
+	max-width: 960px;
+	margin-top: 50px;
+	
+}
+

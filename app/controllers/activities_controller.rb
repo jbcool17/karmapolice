@@ -32,6 +32,7 @@ class ActivitiesController < ApplicationController
     @all_points = Point.where(:activity_id => @activity.id)
     @current_user = User.find session[:user_id]
 
+
     @total = 0
     @all_points.each do |points|
       @total += points.points
@@ -45,7 +46,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.create activity_params
     if @activity.save # Check if the user is valid (per the validations in the model)
-      redirect_to root_path
+      redirect_to activity
     else
       render :new
     end
@@ -54,18 +55,20 @@ class ActivitiesController < ApplicationController
 
   def edit
     @activity = Activity.find params[:id]
-   @current_user = User.find(session[:user_id])
+    @current_user = User.find(session[:user_id])
   end
 
   def update
     activity = Activity.find params[:id]
     activity.update activity_params
+
     redirect_to activity
   end
 
   def destroy
     activity = Activity.find params[:id]
     activity.destroy
+    
     redirect_to activities_path
   end
 

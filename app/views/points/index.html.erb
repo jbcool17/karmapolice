@@ -8,7 +8,7 @@
 <% @points.each do |point| %>
 	<% if User.find(point.activity_user_id).id == @current_user.id %>
 	
-	<p> Activity: <%= link_to(Activity.find(point.activity_id).activity, point_path(point.id)) %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
+	<p> Activity: <%= Activity.find(point.activity_id).activity %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
 	
 	<% end %>
 <% end %>
@@ -19,6 +19,6 @@
 <% @points.each do |point| %>
 	<% if User.exists?(point.activity_user_id) && User.find(point.activity_user_id).id != @current_user.id %>
 
-		<p> Activity: <%= link_to(Activity.find(point.activity_id).activity, point_path(point.id)) %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
+		<p> Activity: <%= Activity.find(point.activity_id).activity %> || Points From: <%= point.voting_user_id %> || Points Given: <%= point.points %> || Comment: <%= point.comment %></p>
 	<% end %>
 <% end %>

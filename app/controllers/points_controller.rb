@@ -9,28 +9,6 @@ class PointsController < ApplicationController
     @current_user = User.find session[:user_id]
 
 
-
-
-     #Gets all activity ids
-    # @activity_ids = []
-    # @activities.each do |id|
-    #   @activity_ids << id.id
-    # end
-
-    # @point_totals = {}
-    #   @activity_ids.each do |x|
-    #     p = Point.where(:activity_id => x)
-    #     @point_totals[x] = 0
-    #     p.each do |y|
-    #       @point_totals[x] += y.points
-    #     end
-    #   end
-    #   @total = @point_totals
-
-    
-
-
-
   end
 
 
@@ -53,9 +31,6 @@ class PointsController < ApplicationController
         end
       end
       @total = @point_totals
-
-   
-
     @who_voted = []
     @voting_ids = Point.where(:activity_id => @point.activity_id)
     @voting_ids.each do |id|
@@ -66,12 +41,15 @@ class PointsController < ApplicationController
   end
 
   def new
-    @point = Point.new :activity_id => params[:id]
-    @current_user = User.find session[:user_id]
+    @point = Point.new #:activity_id => params[:id]
+    #@current_user = User.find session[:user_id]
+    #@activity = Activity.find params[:id]
   end
 
   def create
+
     point = Point.create point_params
+
     redirect_to activity_path(point.activity_id)
   end
 
