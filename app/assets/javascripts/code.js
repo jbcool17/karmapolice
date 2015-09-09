@@ -1,3 +1,22 @@
+
+
+$(document).ready(function() {
+
+    // $('nav li a').hover(function() {
+
+    //             $(this).attr('class', 'fa fa-bolt')
+
+    //     }, function() {
+
+    //             $(this).attr('class', '')
+
+    //     });
+
+    console.log("loaded")
+
+});
+
+
 // $.ajax({
 //            type: "GET",
 //            contentType: "application/json; charset=utf-8",

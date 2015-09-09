@@ -7,8 +7,6 @@ class PointsController < ApplicationController
   	@activities = Activity.all
   	@users = User.all
     @current_user = User.find session[:user_id]
-
-
   end
 
 
@@ -56,16 +54,11 @@ class PointsController < ApplicationController
     if @point.save # Check if the user is valid (per the validations in the model)
       redirect_to activity_path(point_params[:activity_id])
     else
-      
       # @b = Activity.find(@a).activity
       # @c = Activity.find(@a).user_id
       redirect_to new_activity_point_path(@activity, @point) #activity_path(point_params[:activity_id])
-      
       flash[:message] = "Invalid Entry. Please try again."
-      
     end
-
-    #redirect_to activity_path(point.activity_id)
   end
 
   def edit
@@ -89,8 +82,6 @@ class PointsController < ApplicationController
   def point_params
     params.require(:point).permit(:activity_id, :voting_user_id, :points, :activity_user_id, :comment)
   end
-
-  
 
   def check_if_admin
     redirect_to root_path unless @current_user.present? && @current_user.admin?

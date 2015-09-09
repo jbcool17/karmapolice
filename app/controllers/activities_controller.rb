@@ -10,6 +10,19 @@ class ActivitiesController < ApplicationController
 
     @current_user_activities = @current_user.activities
 
+    # @point_totals = {}
+    # @current_user_activities.each do |x|
+    #   p = x.points
+    #   @point_totals[x] = 0
+    #   p.each do |y|
+    #     @point_totals[x.id] += x
+    #   end
+    # end
+    # @point_totals
+
+    
+
+
     #@all_points_current_user = @points.where(:activity_user_id => @current)
 
     # @activity_ids = []
@@ -17,15 +30,7 @@ class ActivitiesController < ApplicationController
     #   @activity_ids << id.id
     # end
 
-    # @point_totals = {}
-    #   @activity_ids.each do |x|
-    #     p = Point.where(:activity_id => x)
-    #     @point_totals[x] = 0
-    #     p.each do |y|
-    #       @point_totals[x] += y.points
-    #     end
-    #   end
-    #   @point_totals
+    
 
   end
 

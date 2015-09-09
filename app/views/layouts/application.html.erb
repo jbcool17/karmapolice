@@ -3,6 +3,7 @@
 <head>
   <title>Karmapolice</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -12,16 +13,18 @@
 		<ul>
 		
 		<% if @current_user && @current_user.admin? %> 
+			<li>ADMIN</li>
 			 <li><%= link_to 'USERS', users_path %> </li>
 			 <li><%= link_to 'ACTIVITIES', activities_path %></li>
 			 <li><%= link_to 'POINTS', points_path %></li>
-			 <li><%= link_to "ADD POINTS", new_point_path %></li>
+			 <li><%= link_to "ADD POINTS", new_point_path %>::</li>
 		<% end %>
 		
 		<% if @current_user %> 
 		  	<li id="welcome">Welcome <%= @current_user.name  %> </li>	 
-		  	<li><%= link_to(image_tag('home.png'), '/') %></li>
-		   	<li><%= link_to 'Activities', activities_path %></li>
+		  	<li><%= link_to( '', '/', :class => "fa fa-home fa-2x") %></li>
+		   	<li><%= link_to ' Activities', activities_path %>
+				
 		    <li><%= link_to 'Create New Activity', new_activity_path %></li> 
 		    <li class='last'>
 		    <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %> </li>
