@@ -2,7 +2,8 @@
 <p>a peer based voting/ranking system.</p>
 <%= link_to('Graph', graph_index_path) %>
 <h2>CURRENT RANKS</h2>
-<table>
+	
+<table id="myTable" class="tablesorter">
 	    <thead>
 	        <tr>
 	            <th>ID</th>
@@ -19,7 +20,13 @@
 	  
 	     		<tr>
 	            	<td id="uid"><%= user.id %></td>
-	            	<td> ##</td>
+	            	<td> 
+	            		<% @rankings.each do |x| %>
+	            			<% if x[0][0] == user.id %>
+	            				<%= x[1] + 1 %>
+	            			<% end %>
+						<% end %>
+	            	</td>
 	            	<td> <%= link_to(user.name, user_path(user.id)) %></td> 
 	            	<td><%= Activity.where(:user_id => user.id).count %></td>
 	            	<td>
