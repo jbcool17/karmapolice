@@ -208,11 +208,10 @@ a[target="_blank"] {
 /*MEDIA QUERIES - MOBILE*/
 @media only screen and (max-width: 1295px) {
     
-
 }
 
 
-@media only screen and (max-width: 765px) {
+@media screen and (max-width: 765px) {
   html{text-align:center;}
   .container {
     margin:120px auto;

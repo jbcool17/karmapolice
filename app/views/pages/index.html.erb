@@ -18,7 +18,7 @@
 		<% @users.each do |user| %>
 	    	<tbody >
 	  
-	     		<tr>
+	     		<tr style="background-color: <%= cycle('rgba(100, 73, 94, .5)', 'rgba(rgba(100, 73, 94, .2))') %>">
 	            	<td id="uid"><%= user.id %></td>
 	            	<td> 
 	            		<% @rankings.each do |x| %>
