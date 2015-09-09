@@ -21,7 +21,7 @@
 		
 		<% if @current_user %> 
 		  	<li id="welcome">Welcome <%= @current_user.name  %> </li>	 
-		  	<li><%= link_to( '', '/', :class => "fa fa-home fa-lg") %></li>
+		  	<li><%= link_to( '', root_path, :class => "fa fa-home fa-lg") %></li>
 		   	<li><i class="fa fa-bolt"></i> <%= link_to 'Profile', user_path(@current_user) %></li>
 		   	
 		   	<li><i class="fa fa-bolt"></i> <%= link_to 'Activities', activities_path %></li>
@@ -52,6 +52,6 @@
 		<%= yield %>
 	</div>
 
-<footer><p>Karma Po Po <span>By JBCOOL</span></p> </footer>
+<footer><p>Karma Po Po // a peer based feedback system.<span>...</span></p> </footer>
 </body>
 </html>

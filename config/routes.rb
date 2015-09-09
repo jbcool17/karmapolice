@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   
-  get 'signup' => 'users#new'#, :as => 'SIGNUP'
+  get 'signup' => 'users#new'
   resources :users, :points
 
   resources :activities do
- 	resources :points, :only => [:create, :index, :new]
+ 	  resources :points, :only => [:create, :index, :new]
   end
 
   get '/login' => 'session#new'

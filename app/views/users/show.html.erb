@@ -7,9 +7,10 @@
 <hr>
 <div class="controls">
 	<p>
+		<% if @current_user.id == @user.id || @current_user.admin? %> 
 		<%= link_to 'Edit', edit_user_path(@user) %>  
-
-		<% if @user.admin? %>
+		<% end %>
+		<% if @current_user.admin? %>
 			<%= link_to 'Delete', @user, :method => 'delete', data: {confirm: 'Are you sure? This will delete everything.'} %>
 		<% end %>
 	</p>
