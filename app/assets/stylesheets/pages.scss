@@ -3,6 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.home {
+	
+}
+
+img {
+	max-width: 960px;
+	border-radius: 10px;
+}
+
+
+
 table {
     table-layout: fixed;
     text-align: center;
@@ -10,9 +21,6 @@ table {
     color: white;
     padding: 10px;
     border-radius: 5px;
-
-
-
 }
 
 table a {
@@ -47,15 +55,18 @@ table th {
 
 }
 
-table tbody tr:hover {
+table tbody:hover {
 	background-color: rgba(150,255,84,.5);
-	
-
 }
 
 @media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	img {
+	max-width: 80%;
+	
+}
 
 	/* Force table to not be like tables anymore */
 	

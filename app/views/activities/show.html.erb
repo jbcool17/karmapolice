@@ -35,6 +35,6 @@
 	<% end %>
 
 	<% if @current_user.id != @activity.user_id %>
-		<%= link_to "ADD POINTS/COMMENTS",  new_activity_point_path(@activity, @point) %>
+		<%= link_to "ADD FEEDBACK",  new_activity_point_path(@activity, @point) %>
 	<% end %>
 </div>

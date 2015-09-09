@@ -17,24 +17,29 @@
 			 <li><%= link_to 'USERS', users_path %> </li>
 			 <li><%= link_to 'ACTIVITIES', activities_path %></li>
 			 <li><%= link_to 'POINTS', points_path %></li>
-			 <li>|</li>
+			 <li class="fa fa-bolt"></li>
 		<% end %>
 		
 		<% if @current_user %> 
 		  	<li id="welcome">Welcome <%= @current_user.name  %> </li>	 
 		  	<li><%= link_to( '', '/', :class => "fa fa-home fa-2x") %></li>
 		   	<li><%= link_to ' Activities', activities_path %>
-				
-		    <li><%= link_to 'Create New Activity', new_activity_path %></li> 
-		    <li class='last'>
-		    <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %> </li>
-		  </ul> 
+				<li class="fa fa-bolt"></li>
+		    <li><%= link_to 'Create New Activity', new_activity_path %></li>
+		    <li class="fa fa-bolt"></li> 
+		    <li class='last'><%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %> </li>
+		   
 		<% else %> 
 		  
 		    <li><%= link_to "Login", login_path %></a></li> 
+		    <li class="fa fa-bolt"></li>
 		    <li><%= link_to "Signup", new_user_path %></a></li> 
+		    
+		    
 		  
 		<% end %>
+		<li id="title">CRITIC!</li></ul>
+		</ul>
 	</nav>
 
 	

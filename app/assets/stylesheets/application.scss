@@ -13,24 +13,35 @@
  *= require_tree .
  *= require_self
  */
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);*/
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
-
-
+@import url(https://fonts.googleapis.com/css?family=Paytone+One);
 body {
 	font-family: 'Roboto', sans-serif;
   /*background: #eee;*/
 	
 }
+
+#title {
+  float:right;
+  font-family: 'Paytone One', sans-serif;
+  position: absolute;
+  top:0px;
+  right:10px;
+  font-size:2em;
+  letter-spacing: 20px;
+  
+
+}
 #welcome {
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1em;
 }
+
+/*NAV----*/
 nav {
 	background-color: rgba(46, 204, 113, 1);
   box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25);
-  position: absolute;
+  position: fixed;
   top:0;
   left: 0;
   width: 100%;	
@@ -42,10 +53,8 @@ nav li {
   padding-right: 10px;
 	list-style: none;
   display: inline-block;
-  
   height: 100%;  
 }
-
 nav a { 
   text-decoration: none;
   transition: all .2s;
@@ -56,35 +65,47 @@ nav li a:hover {
 	text-decoration: underline;
 	color:white;
   font-size: 2em;
-
 }
-
+/*MAIN CONTAINER----*/
 .container {
 	max-width: 960px;
 	margin:80px auto;
 }
 
-.new {
-	/*max-width: 500px;*/
+.container a {
+  text-decoration: none;
+  color: rgba(93, 173, 226, 1);
+}
+.container a:hover {
+  text-decoration: underline;
+  color: black;
+  
 }
 
+
+
+/*CONTROLS FOR ACTVITIES----*/
 .controls a {
   color: rgba(93, 173, 226, 1);
   text-decoration: none;
   font-weight: bold;
   transition: all .5;
 }
-
 .controls a:hover {
   text-decoration: underline;
   color: black;
-
 }
-
 .controls a::after {
   content: " | "
 }
 
+
+.comment h3 {
+  text-decoration: underline;
+}
+
+
+/*FOOTER----*/
 footer {
 	background-color: black;
 	color: #2ecc71;
@@ -92,20 +113,21 @@ footer {
 	margin-top: 20px;
 	position: fixed;
 	bottom:0px;
-	left: 0px;
-  
-	
+	left: 0px; 
 }
 footer span {
 	float: right;
-
 }
 
-.comment h3 {
-  text-decoration: underline;
+
+/*FORM CONTAINER----*/
+#container {
+  max-width: 500px;
+  margin: auto;
 }
 
-/* FORM */
+/*FORM----*/
+
 
 form {
   margin-bottom: 60px;
@@ -128,9 +150,7 @@ textarea {
   padding-top: 10px;
   padding-bottom: 10px;
   transition: all .2s;
-  
 }
-
 select {
   background-color: #e8eeef;
   width: 268px;
@@ -141,9 +161,7 @@ select {
    border-radius: 0;
    height: 34px;
    -webkit-appearance: none;
-
 }
-
 input:not(.btn):focus {
   color:rgba(46, 204, 113, 1);
   font-size: 2em;
@@ -152,27 +170,18 @@ label {
   display: block;
   margin-bottom: 0.5em; 
 }
-
 form {
   padding: 20px 24px;
   background: rgba(0,0,0,.01);
 }
-
-#container {
-  max-width: 500px;
-  margin: auto;
-}
-
 /*input[type="email"] {
   background: #fdfee6;
 }*/
-
 a[target="_blank"] {
   color: #39add1;
   text-decoration: none;
   border-bottom: 1px dotted;
 }
-
 .btn {
 
   cursor: pointer;
@@ -182,23 +191,16 @@ a[target="_blank"] {
   text-transform: uppercase;
   background-color: #2ecc71;
   margin-top:10px;
-
-
 }
-
 .btn:hover {
   background-color: #2eaa71;
 }
 
-.default {
 
-
-}
-
+/*ERRORS----*/
 .error {
   background-color: #ff784f;
 }
-
 #errors {
 	color:red;
 	text-align: center;
@@ -210,14 +212,17 @@ a[target="_blank"] {
     
 }
 
-
 @media screen and (max-width: 765px) {
+
   html{text-align:center;}
   .container {
     margin:120px auto;
   }
   select, input, textarea {
     width: 100%;
+  }
+  #title {
+  position:inherit;
   }
 
 

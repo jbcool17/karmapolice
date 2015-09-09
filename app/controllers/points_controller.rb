@@ -57,7 +57,7 @@ class PointsController < ApplicationController
       # @b = Activity.find(@a).activity
       # @c = Activity.find(@a).user_id
       redirect_to new_activity_point_path(@activity, @point) #activity_path(point_params[:activity_id])
-      flash[:message] = "Invalid Entry. Please try again."
+      flash[:message] = "You didn't add a comment. Please try again."
     end
   end
 

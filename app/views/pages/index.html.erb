@@ -1,8 +1,15 @@
-<h1>This is a Website</h1>
-<p>a peer based voting/ranking system.</p>
-<%= link_to('Graph', graph_index_path) %>
+<div class="home">
+
+	<h1>WELCOME TO CRITIC!</h1>
+	<p>a peer based feedback system.</p>
+
+	<%= image_tag('http://www.topanimestream.com/ImageHost/25/39/8/w1280_The_Critic_backdrop.jpg') %>
+
+<p><%= link_to('Graph', graph_index_path) %></p>
+
+
+<% if @current_user %>	
 <h2>CURRENT RANKS</h2>
-	
 <table id="myTable" class="tablesorter">
 	    <thead>
 	        <tr>
@@ -58,6 +65,6 @@
 	    	</tbody>
 	    <% end %>
 	</table>
-
-
+</div>
+<% end %>
 </div>
