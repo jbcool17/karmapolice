@@ -2,10 +2,18 @@
 
 	<h1>WELCOME TO CRITIC!</h1>
 	<p>a peer based feedback system.</p>
+	<ul class="slide bxslider">
+	  <li><%= image_tag('fillmurray.jpg') %></li>
+	  <li><p><%= link_to('Graph', graph_index_path) %></p></li>
+	  <li>NEWS
+	  	<p>New things coming?!</p>
+	  </li>
+	  <li>And so on...</li>
+	</ul>
 
-	<%= image_tag('http://www.topanimestream.com/ImageHost/25/39/8/w1280_The_Critic_backdrop.jpg') %>
+	
 
-<p><%= link_to('Graph', graph_index_path) %></p>
+
 
 
 <% if @current_user %>	

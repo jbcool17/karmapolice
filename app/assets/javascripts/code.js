@@ -11,6 +11,17 @@ $(document).ready(function() {
     //             $(this).attr('class', '')
 
     //     });
+	
+	//INIT SLIDER
+	$(".bxslider").bxSlider({auto: true});
+
+	//REMOVE BoxShadow From Slider
+	
+	$('.bx-wrapper .bx-viewport').css('box-shadow', '0 0 5px white');
+	$('.bx-wrapper .bx-viewport').css('text-align', 'center');
+	
+	$('img').css('margin-left', 'auto');
+	$('img').css('margin-right', 'auto');
 
     console.log("loaded")
 

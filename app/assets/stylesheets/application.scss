@@ -10,8 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require bxslider
+ *= require_tree .
  */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 @import url(https://fonts.googleapis.com/css?family=Paytone+One);
@@ -19,6 +20,9 @@ body {
 	font-family: 'Roboto', sans-serif;
   /*background: #eee;*/
 	
+}
+
+.slide ul li {
 }
 
 #title {
@@ -45,6 +49,7 @@ nav {
   top:0;
   left: 0;
   width: 100%;	
+  z-index: 1000;
 }
 nav ul {
   height: 100%;
@@ -55,11 +60,11 @@ nav li {
   display: inline-block;
   height: 100%;  
 }
-nav a { 
+nav li a { 
   text-decoration: none;
   transition: all .2s;
   font-weight: bold;
-  transition: all .2s;
+  
 }
 nav li a:hover {
 	text-decoration: underline;
@@ -216,13 +221,30 @@ a[target="_blank"] {
 
   html{text-align:center;}
   .container {
-    margin:120px auto;
+    margin:190px auto;
   }
   select, input, textarea {
     width: 100%;
   }
   #title {
   position:inherit;
+  }
+
+  nav {text-align:left;}
+  nav li { margin-top: 5px;}
+  nav ul li:nth-child(odd) {
+    list-style: none;
+    display: list-item;
+    font-size:1em;
+  }
+  nav a { 
+  text-decoration: none;
+  font-weight: bold;
+  
+}
+  nav li a:hover {
+    text-decoration: underline;
+    color:white;
   }
 
 

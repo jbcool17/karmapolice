@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   
-  get 'signup' => 'users#new'
+  get 'signup' => 'users#new'#, :as => 'SIGNUP'
   resources :users, :points
 
   resources :activities do
