@@ -6,11 +6,6 @@
 	
 		<h4 style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other">Activity: <%= activity.activity %> || <%= link_to('View Stats', activity_path(activity)) %>
 		Total Points 
-		<% activity.points.each do |x| %>
-
-			<%= x.points %>
-
-			<% end %>
 			<%= @point_totals %>
 		</h4>
 		

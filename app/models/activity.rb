@@ -12,7 +12,7 @@
 #
 
 class Activity < ActiveRecord::Base
-	has_many :points
+	has_many :points, dependent: :destroy
 	belongs_to :users
 
 	validates :activity, :presence => true, :uniqueness => true

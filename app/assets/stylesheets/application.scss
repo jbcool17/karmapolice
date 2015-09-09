@@ -20,8 +20,10 @@ body {
 	font-family: 'Roboto', sans-serif;
 	
 }
-
-
+#welcome {
+  font-weight: bold;
+  font-size: 2em;
+}
 nav {
 	background-color: rgba(46, 204, 113, 1);
   box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.25);
@@ -29,36 +31,28 @@ nav {
   top:0;
   left: 0;
   width: 100%;	
-  /*line-height: 30px;*/
 }
 nav ul {
-  /*height: 40px;
-  margin: 0;
-  padding: 0;*/
   height: 100%;
-  
 }
-
 nav li {
   padding-right: 10px;
 	list-style: none;
   display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-
+  
+  height: 100%;  
 }
-/*nav li + li:hover {
-  background-color: skyblue;
-}*/
+
 nav a { 
   text-decoration: none;
+  transition: all .2s;
+  font-weight: bold;
+  transition: all .2s;
 }
-nav a::before {
-	/*content: ' <■> ';*/
-}
-nav li:hover {
+nav li a:hover {
 	text-decoration: underline;
-	color:blue;
+	color:white;
+  font-size: 2em;
 
 }
 
@@ -69,6 +63,23 @@ nav li:hover {
 
 .new {
 	/*max-width: 500px;*/
+}
+
+.controls a {
+  color: rgba(93, 173, 226, 1);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all .5;
+}
+
+.controls a:hover {
+  text-decoration: underline;
+  color: black;
+
+}
+
+.controls a::after {
+  content: " | "
 }
 
 footer {
@@ -82,26 +93,20 @@ footer {
   
 	
 }
-footer p {
-	
+footer span {
+	float: right;
 
-}
-
-.comment {
-  
 }
 
 .comment h3 {
   text-decoration: underline;
 }
 
-/* FORM -------------------- */
+/* FORM */
 
 form {
   margin-bottom: 60px;
 }
-
-/* Form Fields -------------------- */
 
 input,
 textarea {
@@ -119,25 +124,31 @@ textarea {
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
   padding-top: 10px;
   padding-bottom: 10px;
-  
+  transition: all .2s;
   
 }
 
+select {
+  background-color: #e8eeef;
+  width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+
+}
+
+input:focus {
+  color:rgba(46, 204, 113, 1);
+  font-size: 2em;
+}
 label {
   display: block;
   margin-bottom: 0.5em; 
 }
-
-/* Media Queries -------------------- */
-
-@media (max-width: 768px) {
-  #container {
-    width: 92%;
-  }
-}
-
-
-/* Attribute Selectors ------------- */
 
 form {
   padding: 20px 24px;
@@ -149,29 +160,14 @@ form {
   margin: auto;
 }
 
-input[type="email"] {
+/*input[type="email"] {
   background: #fdfee6;
-}
+}*/
 
 a[target="_blank"] {
   color: #39add1;
   text-decoration: none;
   border-bottom: 1px dotted;
-}
-
-/* DRY Classes ------------- */
-
-.br {
-  border-radius: .5em;
-}
-
-.avatar {
-  display: block;
-  margin: 0 auto 2em;
-}
-
-.rounded {
-  border-radius: 50%;
 }
 
 .btn {
@@ -200,27 +196,16 @@ a[target="_blank"] {
   background-color: #ff784f;
 }
 
-@media (min-width: 769px) {
-  .inln {
-    width: auto;
-    display: inline-block;
-  }
-}
-
-select {
-   background: rgbr(50,50,50, .5);
-   width: 268px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   }
-
 #errors {
 	color:red;
 	text-align: center;
 	list-style: none;
+}
+
+/* Media Queries  */
+
+@media (max-width: 768px) {
+  #container {
+    width: 92%;
+  }
 }

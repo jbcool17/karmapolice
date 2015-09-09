@@ -17,7 +17,7 @@
 			 <li><%= link_to 'USERS', users_path %> </li>
 			 <li><%= link_to 'ACTIVITIES', activities_path %></li>
 			 <li><%= link_to 'POINTS', points_path %></li>
-			 <li><%= link_to "ADD POINTS", new_point_path %>::</li>
+			 <li>|</li>
 		<% end %>
 		
 		<% if @current_user %> 
@@ -46,6 +46,6 @@
 		<%= yield %>
 	</div>
 
-<footer><p>Karma Po Po</p></footer>
+<footer><p>Karma Po Po <span>By JBCOOL</span></p> </footer>
 </body>
 </html>

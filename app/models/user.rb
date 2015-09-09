@@ -13,7 +13,7 @@
 
 class User < ActiveRecord::Base
 	has_secure_password
-	has_many :activities
+	has_many :activities, dependent: :destroy
 	
 
 	validates :email, :presence => true, :uniqueness => true
