@@ -1,13 +1,21 @@
-<div class="point">
+<div class="new">
 
-
+<% if @point.errors.any? %>
+  <ol>
+    <% @point.errors.full_messages.each do |msg| %>
+      <li id="errors">
+        <%= msg %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
 
 <%= form_for(@point) do |f| %>
 	<p>
-	<label>Activity </label><%= f.select :activity_id, [[Activity.find(params[:activity_id]).activity, Activity.find(params[:activity_id]).id]]%>
+	<label>Activity </label><%= f.select :activity_id, [[@b, params[:activity_id]]]%>
 	</p>
 	<p>
-	<label>Activity Preformer </label><%= f.select :activity_user_id, [[User.find(Activity.find(params[:activity_id]).user_id).name, Activity.find(params[:activity_id]).user_id]]%>
+	<label>Activity Preformer </label><%= f.select :activity_user_id, [[User.find(@c).name, User.find(@c).id]]%>
 	</p>
 	<p>
 	<label>From User</label><%= f.select :voting_user_id, [[@current_user.name,  @current_user.id]] %>
@@ -20,10 +28,12 @@
 	
 	<p>
 	<label>Points to Add</label>
-		<%= f.select :points, ((0..10).map {|i| [i,i] } << ["No limit",nil]) %>
+		<%= f.select :points, ((0..10).map {|i| [i,i] } ) %>
 	</p>
 
 	<%= f.submit 'SUBMIT',  :class => "btn default" %>
 <% end %>
 
 </div>
+
+<%= @a %>
