@@ -23,7 +23,7 @@ a6 = Activity.create :activity => 'Zach?Attack', :user_id => u4.id, :created_by_
 a7 = Activity.create :activity => 'Eating Apples', :user_id => u6.id, :created_by_id => u1.id, :description => 'Miles eats every apple in the world'
 a8 = Activity.create :activity => 'Zach Talks', :user_id => u4.id, :created_by_id => u7.id, :description => 'Zach talks to the camera'
 
-a9 = Activity.create :activity => 'Kelly', :user_id => u4.id, :created_by_id => u7.id, :description => 'Zach talks to the camera'
+#a9 = Activity.create :activity => 'Kelly', :user_id => u4.id, :created_by_id => u7.id, :description => 'Zach talks to the camera'
 
 Point.destroy_all
 
@@ -48,26 +48,26 @@ Point.create :activity_id => a4.id, :voting_user_id => u3.id, :points => 10, :co
 Point.create :activity_id => a4.id, :voting_user_id => u6.id, :points => 8, :comment => 'Bad job, lol just kidding.', :activity_user_id => u6.id
 Point.create :activity_id => a4.id, :voting_user_id => u3.id, :points => 1, :comment => 'Did not care for this, wasnt what i though.', :activity_user_id => u6.id
 
-Point.create :activity_id => a5.id, :voting_user_id => u6.id, :points => 5, :comment => 'Ok job.', :activity_user_id => u10.id
-Point.create :activity_id => a5.id, :voting_user_id => u5.id, :points => 2, :comment => 'Bad job yo', :activity_user_id => u10.id
+Point.create :activity_id => a5.id, :voting_user_id => u6.id, :points => 5, :comment => 'Ok job.', :activity_user_id => u9.id
+Point.create :activity_id => a5.id, :voting_user_id => u5.id, :points => 2, :comment => 'Bad job yo', :activity_user_id => u9.id
 
 
-Point.create :activity_id => a6.id, :voting_user_id => u5.id, :points => 2, :comment => 'Bad job.', :activity_user_id => u1.id
-Point.create :activity_id => a6.id, :voting_user_id => u8.id, :points => 2, :comment => 'Zach youre a douche', :activity_user_id => u1.id
-Point.create :activity_id => a6.id, :voting_user_id => u9.id, :points => 2, :comment => 'its total zach and i dont like it!', :activity_user_id => u1.id
-Point.create :activity_id => a6.id, :voting_user_id => u4.id, :points => 5, :comment => 'not sure', :activity_user_id => u1.id
-Point.create :activity_id => a6.id, :voting_user_id => u1.id, :points => 1, :comment => 'hmmm....why zach', :activity_user_id => u1.id
+Point.create :activity_id => a6.id, :voting_user_id => u5.id, :points => 2, :comment => 'Bad job.', :activity_user_id => u4.id
+Point.create :activity_id => a6.id, :voting_user_id => u8.id, :points => 2, :comment => 'Zach youre a douche', :activity_user_id => u4.id
+Point.create :activity_id => a6.id, :voting_user_id => u9.id, :points => 2, :comment => 'its total zach and i dont like it!', :activity_user_id => u4.id
+Point.create :activity_id => a6.id, :voting_user_id => u4.id, :points => 5, :comment => 'not sure', :activity_user_id => u4.id
+Point.create :activity_id => a6.id, :voting_user_id => u1.id, :points => 1, :comment => 'hmmm....why zach', :activity_user_id => u4.id
 
 Point.create :activity_id => a7.id, :voting_user_id => u1.id, :points => 1, :comment => 'Ate the core and all.', :activity_user_id => u6.id
-Point.create :activity_id => a7.id, :voting_user_id => u1.id, :points => 10, :comment => 'Mmm Apples.', :activity_user_id => u6.id
-Point.create :activity_id => a7.id, :voting_user_id => u2.id, :points => 2, :comment => 'He really eat to much apples, save some for us', :activity_user_id => u10.id
-Point.create :activity_id => a7.id, :voting_user_id => u5.id, :points => 2, :comment => 'Hey, Miles - the world called its running out of apples.', :activity_user_id => u10.id
+Point.create :activity_id => a7.id, :voting_user_id => u4.id, :points => 10, :comment => 'Mmm Apples.', :activity_user_id => u6.id
+Point.create :activity_id => a7.id, :voting_user_id => u2.id, :points => 2, :comment => 'He really eat to much apples, save some for us', :activity_user_id => u6.id
+Point.create :activity_id => a7.id, :voting_user_id => u5.id, :points => 2, :comment => 'Hey, Miles - the world called its running out of apples.', :activity_user_id => u6.id
 
 
-Point.create :activity_id => a8.id, :voting_user_id => u1.id, :points => 10, :comment => 'I dont know what people are talking about.', :activity_user_id => u6.id
-Point.create :activity_id => a8.id, :voting_user_id => u1.id, :points => 10, :comment => 'yea man ', :activity_user_id => u6.id
-Point.create :activity_id => a8.id, :voting_user_id => u1.id, :points => 1, :comment => 'WTF mate', :activity_user_id => u6.id
-Point.create :activity_id => a8.id, :voting_user_id => u1.id, :points => 10, :comment => 'Great!', :activity_user_id => u6.id
+Point.create :activity_id => a8.id, :voting_user_id => u1.id, :points => 10, :comment => 'I dont know what people are talking about.', :activity_user_id => u4.id
+Point.create :activity_id => a8.id, :voting_user_id => u7.id, :points => 10, :comment => 'yea man ', :activity_user_id => u4.id
+Point.create :activity_id => a8.id, :voting_user_id => u3.id, :points => 1, :comment => 'WTF mate', :activity_user_id => u4.id
+Point.create :activity_id => a8.id, :voting_user_id => u10.id, :points => 10, :comment => 'Great!', :activity_user_id => u4.id
 
 
 
