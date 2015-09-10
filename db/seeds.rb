@@ -20,18 +20,20 @@ a3 = Activity.create :activity => 'Opinions', :user_id => u3.id, :created_by_id 
 a4 = Activity.create :activity => 'Presentation', :user_id => u6.id, :created_by_id => u1.id, :description => 'Talked about his new app.'
 a5 = Activity.create :activity => 'Singing', :user_id => u9.id, :created_by_id => u1.id, :description => 'Did a set at a wedding.'
 a6 = Activity.create :activity => 'Zach?Attack', :user_id => u4.id, :created_by_id => u7.id, :description => 'Zach is up no good again. Whats his deal'
+a7 = Activity.create :activity => 'Eating Apples', :user_id => u6.id, :created_by_id => u1.id, :description => 'Miles eats every apple in the world'
 
 Point.destroy_all
 
-Point.create :activity_id => a1.id, :voting_user_id => u2.id, :points => 10, :comment => 'Good job banana', :activity_user_id => u1.id
-Point.create :activity_id => a1.id, :voting_user_id => u3.id, :points => 5, :comment => 'Good job mango', :activity_user_id => u1.id
-Point.create :activity_id => a1.id, :voting_user_id => u10.id, :points => 6, :comment => 'Good job.',:activity_user_id => u1.id
+Point.create :activity_id => a1.id, :voting_user_id => u2.id, :points => 10, :comment => 'Good job', :activity_user_id => u1.id
+Point.create :activity_id => a1.id, :voting_user_id => u3.id, :points => 5, :comment => 'Good job', :activity_user_id => u1.id
+Point.create :activity_id => a1.id, :voting_user_id => u10.id, :points => 6, :comment => 'Good job',:activity_user_id => u1.id
 Point.create :activity_id => a2.id, :voting_user_id => u1.id, :points => 7, :comment => 'Good job broself', :activity_user_id => u2.id
 Point.create :activity_id => a2.id, :voting_user_id => u6.id, :points => 6, :comment => 'Good job guy.', :activity_user_id => u2.id
 Point.create :activity_id => a3.id, :voting_user_id => u5.id, :points => 5, :comment => 'Good mate.', :activity_user_id => u3.id
-Point.create :activity_id => a3.id, :voting_user_id => u9.id, :points => 6, :comment => 'Good job.', :activity_user_id => u3.id
-Point.create :activity_id => a4.id, :voting_user_id => u3.id, :points => 4, :comment => 'Good job son.', :activity_user_id => u6.id
-Point.create :activity_id => a4.id, :voting_user_id => u7.id, :points => 2, :comment => 'Good job.', :activity_user_id => u6.id
-Point.create :activity_id => a5.id, :voting_user_id => u6.id, :points => 5, :comment => 'Good job.', :activity_user_id => u10.id
-Point.create :activity_id => a5.id, :voting_user_id => u5.id, :points => 2, :comment => 'Good job yo', :activity_user_id => u10.id
-Point.create :activity_id => a6.id, :voting_user_id => u5.id, :points => 2, :comment => 'Good job yo bro hoe gooo', :activity_user_id => u1.id
+Point.create :activity_id => a3.id, :voting_user_id => u9.id, :points => 6, :comment => 'Better then average job.', :activity_user_id => u3.id
+Point.create :activity_id => a4.id, :voting_user_id => u3.id, :points => 4, :comment => 'Eh...', :activity_user_id => u6.id
+Point.create :activity_id => a4.id, :voting_user_id => u7.id, :points => 2, :comment => 'Bad job.', :activity_user_id => u6.id
+Point.create :activity_id => a5.id, :voting_user_id => u6.id, :points => 5, :comment => 'Ok job.', :activity_user_id => u10.id
+Point.create :activity_id => a5.id, :voting_user_id => u5.id, :points => 2, :comment => 'Bad job yo', :activity_user_id => u10.id
+Point.create :activity_id => a6.id, :voting_user_id => u5.id, :points => 2, :comment => 'Bad job.', :activity_user_id => u1.id
+Point.create :activity_id => a7.id, :voting_user_id => u1.id, :points => 10, :comment => 'Ate the core and all.', :activity_user_id => u6.id
