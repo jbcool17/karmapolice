@@ -15,7 +15,8 @@
 	
 
 
-
+<%= @act_count %>
+<%= @points_store %>
 
 <% if @current_user %>	
 <h2>CURRENT RANKS</h2>
@@ -38,8 +39,11 @@
 	            	<td id="uid"><%= user.id %></td>
 	            	<td> 
 	            		<% @rankings.each do |x| %>
-	            			<% if x[0][0] == user.id %>
+	            			<% if x[0][0] == user.id && x[0][1] != 0 %>
 	            				<%= x[1] + 1 %>
+	            			<% elsif x[0][0] == user.id && x[0][1] == 0 %>
+	            				<%= @zero %>
+
 	            			<% end %>
 						<% end %>
 	            	</td>
@@ -60,7 +64,7 @@
 
 	            	</td>
 	            	<td>
-	            		<% if @points_store[user.id] != nil  %>
+	            		<% if @points_store[user.id] != nil && @points_store[user.id] != 0  %>
 		            		<%= @points_store[user.id] %>
 		            	<% else %>   
 		            		<p>No points to report.</p>
