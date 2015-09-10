@@ -1,51 +1,22 @@
-== README
+== KARMA POLICE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+a peer based feedback system
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-sign up and start feeding back
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
 
-```ruby
-#Gets all votes/entries for an activity
-#Where grabs all like values
-count = 0
-a = Point.where :activity_id => 7
+===Future Goals
+- create teams
+- profile pictures
 
-#Adds up all points for the activity
-a.each do |b|
-	count += b.point
-end
-#Gathers all Comments to hash
-user_comment_hash = {}
-a.each do |b|
-	user_comment_hash[b.voting_user_id] =  b.comment
-end
-#=> {22=>"Good job banana", 23=>"Good job mango", 30=>"Good job."}
+===Specs
 
-# Grabs all activities of user
-z = Activity.where :user_id => 31
+- Ruby Version: 2.2.3
 
-count = ##
-```
+- Rails Version: 4.2.4
+
+- Database: Postgres
+
+- uses awesomefonts and bxslider
+
