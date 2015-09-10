@@ -1,16 +1,15 @@
-== KARMA POLICE
+## KARMA POLICE
 
 a peer based feedback system
 
--sign up and start feeding back
+- sign up and start feeding back
 
 
-
-===Future Goals
+### Future Goals
 - create teams
 - profile pictures
 
-===Specs
+### Specs
 
 - Ruby Version: 2.2.3
 
@@ -18,5 +17,6 @@ a peer based feedback system
 
 - Database: Postgres
 
-- uses awesomefonts and bxslider
+- [FontAwesome](https://fortawesome.github.io/Font-Awesome/)
 
+- [bxslider](http://bxslider.com/)
