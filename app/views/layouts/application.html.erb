@@ -31,9 +31,9 @@
 		    <li class='last'><i class="fa fa-bolt"></i> <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %> </li>
 		   
 		<% else %> 
-		  
-		    <li><%= link_to "Login", login_path %></a> </li> 
-		    <li class="fa fa-bolt"></li>
+		  	
+		    <li><%= link_to "Login", login_path %></a></li> 
+		    
 		    <li><%= link_to "Signup", signup_path %></a></li> 
 		    
 		<% end %>

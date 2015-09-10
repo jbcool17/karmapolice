@@ -3,19 +3,20 @@
 
 <p>Person who preformed activity: <%= User.find(@activity.user_id).name %></p>
 <p>Description: <%= @activity.description %></p>
-<p>TOTAL POINTS: <%= @total %></p>
+<p>TOTAL POINTS: <%= @total %>/<%= @activity.points.count * 10 %></p>
 
 <h3>Voting Users </h3>
 	<% @activity.points.each do |x| %>
 		<div style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other">
-		<p><%= User.find(x.voting_user_id).name %> gave you <%= pluralize(x.points, '/ 10 Point') %></p> 
-		<div class="comment"> 
+			<p><i class="fa fa-angle-double-right"></i> <%= User.find(x.voting_user_id).name %> gave you <%= pluralize(x.points, '/ 10 Point') %></p> 
+		<div class="comment">
+
 		<h3>Comment/Feedback</h3> 
-		<% if x.comment.present? %>
-			<p> <%= x.comment %></p> 
-		<% else %>
-			<p>No comment here.</p>
-		<% end %>
+			<% if x.comment.present? %>
+				<p> <%= x.comment %></p> 
+			<% else %>
+				<p>No comment here.</p>
+			<% end %>
 		</div>
 		</div>
 		
@@ -38,6 +39,6 @@
 	<% end %>
 
 	<% if @current_user.id != @activity.user_id %>
-		<%= link_to "ADD FEEDBACK",  new_activity_point_path(@activity, @point) %>
+		<%= link_to "ADD FEEDBACK",  new_activity_point_path(@activity, @point) %><i class="fa fa-comment-o"></i>
 	<% end %>
 </div>

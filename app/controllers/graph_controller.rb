@@ -12,7 +12,7 @@ class GraphController < ApplicationController
   end
   #GETTING DATA to JSON
   def data
-    @points = Point.all
+
     @array = []
     @points.each do |x|
       @array << x.points
