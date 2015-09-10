@@ -18,19 +18,24 @@
 <% end %>
 
 <div class="other_activities">
-<h2>Other User Activities List</h2>
-<hr>
-<p>Activities Count: <%= @activities.count %></p>
-
-<p>Add points and comments to the activities.</p>
-
-<% @activities.each do |activity| %>
-	<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current_user.id   %>
-		<p style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other" >User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || Activity: <%= activity.activity %>
-		<%= link_to('View Stats', activity_path(activity)) %> | <%= link_to('Give Feedback', new_activity_point_path(activity, @point)) %>
-		</p>
+	<h2>Other User Activities List</h2>
 	
-	<% end %>	
-<% end %>
+	<hr>
+
+	<p>Add some feedback to the activities.</p>
+
+	<% @activities.each do |activity| %>
+
+		<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current_user.id   %>
+
+			<p style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other" >User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || 
+			Activity: <%= activity.activity %>
+			<%= link_to('View Stats', activity_path(activity)) %> | 
+			<%= link_to('Give Feedback', new_activity_point_path(activity, @point)) %>
+			</p>
+		
+		<% end %>	
+		
+	<% end %>
 
 </div>

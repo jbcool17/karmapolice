@@ -4,80 +4,88 @@
 	<p>- for a minute there, I lost myself, I lost myself.</p>
 	<ul class="slide bxslider">
 	  <li><%= image_tag('fillmurray.jpg') %></li>
+
 	  <li><p><%= link_to('Graph', graph_index_path) %></p></li>
-	  <li>NEWS
+
+	  <li>
+	  	<h3>NEWS</h3>
 	  	<p>New things coming?!</p>
-	  	<p>Teams and such.</p>
+	  	<p>Teams and Pictures.</p>
 	  </li>
+
 	  <li>And so on...</li>
+	  
 	</ul>
 
-	
-
-
-<%= @act_count %>
-<%= @points_store %>
-
 <% if @current_user %>	
-<h2>CURRENT RANKS</h2>
-<table id="myTable" class="tablesorter">
-	    <thead>
-	        <tr>
-	            <th>ID</th>
-	            <th>OVERALL RANK</th>
-	            <th>NAME</th>
-	            <th>ACTIVITITES PREFORMED</th>
-	            <th>ACTIVITY LIST</th>
-	            <th>TOTAL POINTS</th>
-	            <th>COMMENTS</th>
-	        </tr>
-	    </thead>
-		<% @users.each do |user| %>
-	    	<tbody >
-	  
-	     		<tr style="background-color: <%= cycle('rgba(100, 73, 94, .5)', 'rgba(rgba(100, 73, 94, .2))') %>">
-	            	<td id="uid"><%= user.id %></td>
-	            	<td> 
-	            		<% @rankings.each do |x| %>
-	            			<% if x[0][0] == user.id && x[0][1] != 0 %>
-	            				<%= x[1] + 1 %>
-	            			<% elsif x[0][0] == user.id && x[0][1] == 0 %>
-	            				<%= @zero %>
 
-	            			<% end %>
-						<% end %>
-	            	</td>
-	            	<td> <%= link_to(user.name, user_path(user.id)) %></td> 
-	            	<td><%= Activity.where(:user_id => user.id).count %></td>
-	            	<td>
-	            		<ul>
-		            		<% if Activity.where(:user_id => user.id).present? %>
-		            			<% Activity.where(:user_id => user.id).each do |act|  %>
-		            			
-		            				<li> <%= link_to(act.activity, activity_path(act)) %> </li>
-							
-								<% end %>
-							<% else %>
-									<p>No Activities to report.</p>
-		            		<% end %>
-	            		</ul>
+	<h2>CURRENT RANKS</h2>
 
-	            	</td>
-	            	<td>
-	            		<% if @points_store[user.id] != nil && @points_store[user.id] != 0  %>
-		            		<%= @points_store[user.id] %>
-		            	<% else %>   
-		            		<p>No points to report.</p>
-		            	<% end %>
-	            	</td>
-	            	<td>
-	            		<%= Point.where(:activity_user_id => user.id).count %>
-	            	</td>
-	        	</tr>
+	<table id="myTable" class="tablesorter">
+		    <thead>
+		        <tr>
+		            <th>ID</th>
+		            <th>OVERALL RANK</th>
+		            <th>NAME</th>
+		            <th>ACTIVITITES PREFORMED</th>
+		            <th>ACTIVITY LIST</th>
+		            <th>TOTAL POINTS</th>
+		            <th>COMMENTS</th>
+		        </tr>
+		    </thead>
+			<% @users.each do |user| %>
+		    	<tbody >
+		  
+		     		<tr style="background-color: <%= cycle('rgba(100, 73, 94, .5)', 'rgba(rgba(100, 73, 94, .2))') %>">
+		            	<td id="uid"><%= user.id %></td>
 
-	    	</tbody>
-	    <% end %>
-	</table>
+		            	<td> 
+		            		<% @rankings.each do |x| %>
+		            			<% if x[0][0] == user.id && x[0][1] != 0 %>
+		            				<%= x[1] + 1 %>
+		            			<% elsif x[0][0] == user.id && x[0][1] == 0 %>
+		            				<%= @zero %>
+
+		            			<% end %>
+							<% end %>
+		            	</td>
+
+		            	<td> <%= link_to(user.name, user_path(user.id)) %></td> 
+		            	
+		            	<td><%= Activity.where(:user_id => user.id).count %></td>
+		            	
+		            	<td>
+		            		<ul>
+			            		<% if Activity.where(:user_id => user.id).present? %>
+			            			<% Activity.where(:user_id => user.id).each do |act|  %>
+			            			
+			            				<li> <%= link_to(act.activity, activity_path(act)) %> </li>
+								
+									<% end %>
+								<% else %>
+										<p>No Activities to report.</p>
+			            		<% end %>
+		            		</ul>
+
+		            	</td>
+
+		            	<td>
+		            		<% if @points_store[user.id] != nil && @points_store[user.id] != 0  %>
+			            		<%= @points_store[user.id] %>
+			            	<% else %>   
+			            		<p>No points to report.</p>
+			            	<% end %>
+		            	</td>
+
+		            	<td>
+		            		<%= Point.where(:activity_user_id => user.id).count %>
+		            	</td>
+
+		        	</tr>
+
+		    	</tbody>
+		    <% end %>
+		</table>
+<% end %>	
 </div>
-<% end %>
-</div>
+

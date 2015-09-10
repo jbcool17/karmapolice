@@ -36,15 +36,13 @@
 		    <li class="fa fa-bolt"></li>
 		    <li><%= link_to "Signup", signup_path %></a></li> 
 		    
-		    
-		  
 		<% end %>
-		
 		</ul>
 	</nav>
 
 	
 	<div class="container">
+
 		<% if flash[:message].present? %>
   			<p id="errors"><%= flash[:message] %></p>
 		<% end %>
@@ -52,6 +50,7 @@
 		<%= yield %>
 	</div>
 
-<footer><p>Karma Po Po // a peer based feedback system.<span>...</span></p> </footer>
+	<footer><p>Karma Po Po // a peer based feedback system.<span>...</span></p> </footer>
+
 </body>
 </html>

@@ -11,52 +11,26 @@ class PointsController < ApplicationController
 
 
   def show
-    # @point = Point.find params[:id]
-    # @activities = Activity.all
-
-    # #Gets all activity ids
-    # @activity_ids = []
-    # @activities.each do |id|
-    #   @activity_ids << id.id
-    # end
-    # #Gets total points of activity
-    # @point_totals = {}
-    #   @activity_ids.each do |x|
-    #     p = Point.where(:activity_id => x)
-    #     @point_totals[x] = 0
-    #     p.each do |y|
-    #       @point_totals[x] += y.points
-    #     end
-    #   end
-    #   @total = @point_totals
-    # @who_voted = []
-    # @voting_ids = Point.where(:activity_id => @point.activity_id)
-    # @voting_ids.each do |id|
-    #   @who_voted << id.voting_user_id
-    # end
-    # @who_voted
-
+    @point = Point.find params[:id]
   end
 
   def new
     @point = Point.new #:activity_id => params[:id]
-    @a = params[:activity_id]
-    @b = Activity.find(@a).activity
-    @c = Activity.find(@a).user_id
+
+    a = params[:activity_id]
+    @activity_name = Activity.find(a).activity
+    @activity_preformer = Activity.find(a).user_id
   end
 
   def create
-    @point = Point.create point_params
-    @a = point_params[:activity_id]
 
+    @point = Point.create point_params
     @activity = Activity.find(point_params[:activity_id])
 
     if @point.save # Check if the user is valid (per the validations in the model)
       redirect_to activity_path(point_params[:activity_id])
     else
-      # @b = Activity.find(@a).activity
-      # @c = Activity.find(@a).user_id
-      redirect_to new_activity_point_path(@activity, @point) #activity_path(point_params[:activity_id])
+      redirect_to new_activity_point_path(@activity, @point)
       flash[:message] = "You didn't add a comment. Please try again."
     end
   end

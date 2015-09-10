@@ -18,7 +18,6 @@ class Activity < ActiveRecord::Base
 	validates :activity, :presence => true, :uniqueness => true
 	validates :description, :presence => true, :length => { :minimum => 3 }
 	validates :user_id, :presence => true
-	#validates :created_by_id, :presence => true
 
 	accepts_nested_attributes_for :points, allow_destroy: true
 end

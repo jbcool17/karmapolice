@@ -12,13 +12,13 @@
 
 <%= form_for(@point) do |f| %>
 	<p>
-	<label>Activity </label><%= f.select :activity_id, [[@b, params[:activity_id]]]%>
+		<label>Activity </label><%= f.select :activity_id, [[@activity_name, params[:activity_id]]]%>
 	</p>
 	<p>
-	<label>Activity Preformer </label><%= f.select :activity_user_id, [[User.find(@c).name, User.find(@c).id]]%>
+		<label>Activity Preformer </label><%= f.select :activity_user_id, [[User.find(@activity_preformer).name, User.find(@activity_preformer).id]]%>
 	</p>
 	<p>
-	<label>From User</label><%= f.select :voting_user_id, [[@current_user.name,  @current_user.id]] %>
+		<label>From User</label><%= f.select :voting_user_id, [[@current_user.name,  @current_user.id]] %>
 	</p>
 
 	<p>
@@ -27,11 +27,11 @@
 	</p>
 	
 	<p>
-	<label>Points to Add</label>
+		<label>Points to Add</label>
 		<%= f.select :points, ((0..10).map {|i| [i,i] } ) %>
 	</p>
 
-	<%= f.submit 'SUBMIT',  :class => "btn default" %>
+	<%= f.submit 'SUBMIT',  :class => "btn" %>
 <% end %>
 
 </div>

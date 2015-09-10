@@ -14,12 +14,11 @@
 
 class Point < ActiveRecord::Base
 	
-
-	#validates :Point, uniqueness: { scope: [:voting_user_id, :activity_id, message: "what up" ] }
 	validates :activity_id, :presence => true 
 	validates :voting_user_id, :presence => true #:uniqueness => true
 	validates :points, :presence => true
 	validates :activity_user_id, :presence => true
 	validates :comment, :presence => true
+	
 	belongs_to :activities
 end

@@ -40,7 +40,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    #@user = @current_user
     user = User.find params[:id]
     if user.update user_params
       redirect_to user
@@ -51,19 +50,6 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find params[:id]
-
-    # points = Point.where(:activity_user_id => user)
-    # points.each do |x|
-    #   y = Point.find(x.id)
-    #   y.destroy
-    # end
-
-    # points = Point.where(:voting_user_id => user)
-    # points.each do |x|
-    #   y = Point.find(x.id)
-    #   y.destroy
-    # end
-
     user.destroy
     redirect_to users_path
   end
