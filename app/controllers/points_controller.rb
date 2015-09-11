@@ -30,6 +30,7 @@ class PointsController < ApplicationController
     if @point.save # Check if the user is valid (per the validations in the model)
       redirect_to activity_path(point_params[:activity_id])
     else
+      #sets up form with correct activity
       redirect_to new_activity_point_path(@activity, @point)
       flash[:message] = "You didn't add a comment. Please try again."
     end

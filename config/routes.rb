@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   
   get 'signup' => 'users#new'
-  resources :users, :points
+  resources :users #:points
 
   #Nested Route - Activities/Points
   resources :activities do
