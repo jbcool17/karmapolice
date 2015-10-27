@@ -13,11 +13,14 @@ $(document).ready(function() {
 	
 	//Center Image in Slider
 	$('img').css('border-radius', '20px');
-	$('img').css('margin-left', 'auto');
-	$('img').css('margin-right', 'auto');
-	$('img').css('margin-top', 'auto');
-	$('img').css('margin-bottom', 'auto');
+	$('img').css('margin', 'auto');
+	
 
-    console.log("loaded-code")
+	$('.slider').slick({
+  		autoplay: true,
+  		autoplaySpeed: 2000
+	});
+
+    console.log("loaded-code");
 
 });
