@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dck8glcad
+  api_key: '512246135819236'
+  api_secret: kt5GYT4IP3pxp9Y4v5FmsvzdIqo
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dck8glcad
+  api_key: '512246135819236'
+  api_secret: kt5GYT4IP3pxp9Y4v5FmsvzdIqo
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dck8glcad
+  api_key: '512246135819236'
+  api_secret: kt5GYT4IP3pxp9Y4v5FmsvzdIqo
+  enhance_image_tag: true
+  static_image_support: false
