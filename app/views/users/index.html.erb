@@ -2,7 +2,7 @@
 
 <% @users.each do |user| %>
 
-	<p style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other">Name: <%= link_to(user.name, user) %> || Email: <%= user.email %> | 
+	<p style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other icon-img"> <%= image_tag user.profile_picture %> | Name: <%= link_to(user.name, user) %> || Email: <%= user.email %> | 
 	<%= link_to 'Edit', edit_user_path(user) %> |
 	<%= link_to "Delete User", user, :method => 'delete', data: {confirm: 'Are you sure? This will delete everything.'} %></p>
 	
