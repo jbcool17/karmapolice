@@ -17,7 +17,14 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.create user_params
+  	user_details = user_params 
+    # Using cloudinary to upload user profile pics
+    
+    if params[:file]
+        response = Cloudinary::Uploader.upload params[:file]
+        user_details["profile_picture"] = response["url"]
+    end 
+    @user = User.new user_details
     
     if @user.save # Check if the user is valid (per the validations in the model)
       session[:user_id] = @user.id #logs user in after creation/save
@@ -41,10 +48,16 @@ class UsersController < ApplicationController
 
   def update
 
-    user = User.find params[:id]
+    @user = @current_user
+    user_details = user_params
     
-    if user.update user_params
-      redirect_to user
+   if params[:file]
+        response = Cloudinary::Uploader.upload params[:file]
+        user_details["profile_picture"] = response["url"]
+    end
+    # binding.pry
+    if @user.update(user_details)
+      redirect_to @user
     else
       render :edit
     end
@@ -59,7 +72,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-  	params.require(:user).permit(:email, :name, :password, :password_confirmation)
+  	params.require(:user).permit(:email, :name, :password, :password_confirmation, :profile_picture)
   end
 
   def check_if_logged_in
