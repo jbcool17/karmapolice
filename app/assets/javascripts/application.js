@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.slick
-//= require bxslider
 //= require_tree .
 //= require d3
