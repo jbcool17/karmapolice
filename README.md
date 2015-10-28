@@ -7,7 +7,6 @@ a peer based feedback system
 
 ### Future Goals
 - create teams
-- profile pictures
 
 ### Specs
 
