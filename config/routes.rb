@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   #Nested Route - Activities/Points
   resources :activities do
- 	  resources :points #:only => [:create, :index, :new, ]
+ 	  resources :points
   end
 
   #LOGIN

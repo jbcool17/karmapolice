@@ -1,5 +1,7 @@
 class PointsController < ApplicationController
-  #before_action :check_if_admin, :only => []
+
+  # before_action :check_if_logged_in, :only => [:show]
+  # before_action :check_if_admin, :only => [:edit, :update]
   
   
   def index
@@ -56,6 +58,10 @@ class PointsController < ApplicationController
 
   def point_params
     params.require(:point).permit(:activity_id, :voting_user_id, :points, :activity_user_id, :comment)
+  end
+
+  def check_if_logged_in
+    redirect_to root_path unless @current_user.present?
   end
 
   def check_if_admin
