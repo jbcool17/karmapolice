@@ -1,15 +1,15 @@
 User.destroy_all
 
-u1 = User.create :email => 'john@user.com', :name => 'John', :password => 'pw', :admin => true
-u2 = User.create :email => 'jackie@user.com', :name => 'Jackie', :password => 'pw', :admin => false
-u3 = User.create :email => 'cheryl@user.com', :name => 'Cheryl', :password => 'pw', :admin => false
-u4 = User.create :email => 'zach@user.com', :name => 'Zach Morris', :password => 'pw', :admin => false
-u5 = User.create :email => 'lisa@user.com', :name => 'Lisa Turtle', :password => 'pw', :admin => false
-u6 = User.create :email => 'miles@user.com', :name => 'Miles', :password => 'pw', :admin => false
-u7 = User.create :email => 'kelly@user.com', :name => 'Kelly Kapowski', :password => 'pw', :admin => false
-u8 = User.create :email => 'justin@user.com', :name => 'Justin', :password => 'pw', :admin => false
-u9 = User.create :email => 'nate@user.com', :name => 'Nate', :password => 'pw', :admin => false
-u10 = User.create :email => 'slater@user.com', :name => 'A. C. Slater', :password => 'pw', :admin => false
+u1 = User.create :email => 'john@user.com', :name => 'John', :password => 'pw', :admin => true, :profile_picture => 'http://static01.nyt.com/images/2011/09/04/sports/surfing3/surfing3-articleLarge.jpg'
+u2 = User.create :email => 'jackie@user.com', :name => 'Jackie', :password => 'pw', :admin => false, :profile_picture => 'http://www.fillmurray.com/200/300'
+u3 = User.create :email => 'cheryl@user.com', :name => 'Cheryl', :password => 'pw', :admin => false, :profile_picture => 'http://www.fillmurray.com/200/300'
+u4 = User.create :email => 'zach@user.com', :name => 'Zach Morris', :password => 'pw', :admin => false, :profile_picture => 'http://www.fillmurray.com/200/300'
+u5 = User.create :email => 'lisa@user.com', :name => 'Lisa Turtle', :password => 'pw', :admin => false, :profile_picture => 'http://www.fillmurray.com/200/300'
+u6 = User.create :email => 'miles@user.com', :name => 'Miles', :password => 'pw', :admin => false, :profile_picture => 'http://www.fillmurray.com/200/300'
+u7 = User.create :email => 'kelly@user.com', :name => 'Kelly Kapowski', :password => 'pw', :admin => false, :profile_picture => 'http://www.fillmurray.com/200/300'
+u8 = User.create :email => 'justin@user.com', :name => 'Justin', :password => 'pw', :admin => false, :profile_picture => 'http://www.fillmurray.com/200/300'
+u9 = User.create :email => 'nate@user.com', :name => 'Nate', :password => 'pw', :admin => false, :profile_picture => 'http://www.fillmurray.com/200/300'
+u10 = User.create :email => 'slater@user.com', :name => 'A. C. Slater', :password => 'pw', :admin => false, :profile_picture => 'http://www.fillmurray.com/200/300'
 
 
 Activity.destroy_all

@@ -1,7 +1,8 @@
 <h2><%= @user.name %>'s Profile</h2>
 
-<p>EMAIL: <%= @user.email %></p>
-<p>NAME: <%= @user.name %></p>
+<p style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other">EMAIL: <%= @user.email %></p>
+<p style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other">NAME: <%= @user.name %></p>
+<p style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other"><%= image_tag @user.profile_picture %></p>
 
 <hr>
 <div class="controls">

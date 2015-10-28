@@ -11,9 +11,11 @@
  * file per style scope.
  *
  *= require_self
- *= require bxslider
  *= require_tree .
  */
+
+@import 'slick';
+@import 'slick-theme';
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 @import url(https://fonts.googleapis.com/css?family=Paytone+One);
 body {
@@ -22,8 +24,18 @@ body {
 	
 }
 
-.slide {
+.icon-img img {
+  height:25px;
+  border-radius: 0px;
+  vertical-align: middle;
+}
+.slider {
+
+  text-align: center;
   font-size: 2em;
+  padding: 10px;
+  border: 25px solid black;
+  border-radius: 25px;
 }
 
 #title {
