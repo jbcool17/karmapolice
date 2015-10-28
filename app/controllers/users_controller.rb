@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
   def update
 
-    @user = @current_user
+    @user = User.find params[:id]
     user_details = user_params
     
    if params[:file]
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     end
     # binding.pry
     if @user.update(user_details)
-      redirect_to @user
+      redirect_to @current_user
     else
       render :edit
     end

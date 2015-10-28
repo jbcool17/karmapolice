@@ -2,6 +2,8 @@ class ActivitiesController < ApplicationController
 
   before_action :check_if_logged_in, :only => [:index, :edit, :update, :show, :new, :destroy]
 
+  before_action :check_activity_owner, :only => [:edit, :update]
+
   def index
   	@activities = Activity.all
   	@users = User.all
@@ -63,6 +65,11 @@ class ActivitiesController < ApplicationController
 
   def check_if_logged_in
     redirect_to root_path unless @current_user.present?
+  end
+
+  def check_activity_owner
+    # check if current user created activity
+     redirect_to root_path unless @current_user.present? && Activity.find(params[:id]).created_by_id == @current_user.id || @current_user.admin?
   end
 
 end
