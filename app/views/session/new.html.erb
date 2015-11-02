@@ -2,10 +2,18 @@
 <div id="container">
 <h2>Login</h2>
 <%= form_tag '/login' do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag 'Login Yo', :class => "btn default" %>
+	
+	<p class="form-group">
+	  <%= label_tag :email %>
+	  <%= text_field_tag :email, "", class: 'form-control'  %>
+	</p>	
+
+	<p class="form-group">
+	  <%= label_tag :password %>
+	  <%= password_field_tag :password, "", class: 'form-control' %>
+	</p>
+
+  <%= submit_tag 'Login Yo', class: "btn btn-primary" %>
+
 <% end %>
 </div>
