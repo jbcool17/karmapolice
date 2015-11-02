@@ -18,4 +18,29 @@ a peer based feedback system
 
 - [FontAwesome](https://fortawesome.github.io/Font-Awesome/)
 
-- [bxslider](http://bxslider.com/)
+- [slickjs](http://kenwheeler.github.io/slick/)
+
+- [Bootstrap-Sass](https://github.com/twbs/bootstrap-sass)
+
+### Installation
+
+Clone the repo
+```sh
+$ git clone https://github.com/jbcool17/karmapolice.git
+```
+
+Install Gems
+```sh
+$ bundle install
+```
+
+Create a DB
+```sh
+$ rake db:create
+```
+
+Start up the server!
+```sh
+$ rails server
+```
+
