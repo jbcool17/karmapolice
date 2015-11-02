@@ -26,6 +26,17 @@ body {
 	
 }
 
+.navbar-default {
+  background-color: #2ecc71 !important; 
+}
+
+.navbar-default .navbar-nav > li > a {
+  color:white;
+}
+.navbar-brand {
+  color:white  !important;
+}
+
 .icon-img img {
   height:25px;
   border-radius: 0px;
@@ -62,8 +73,16 @@ body {
 
 }
 
+.thepad {
+  padding: 10px;
+}
+
+.container {
+  padding-bottom: 20px;
+}
 
 .footer {
+  
   position: fixed;
   bottom: 0px;
   left: 0px;

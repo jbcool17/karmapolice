@@ -20,4 +20,15 @@ class Activity < ActiveRecord::Base
 	validates :user_id, :presence => true
 
 	accepts_nested_attributes_for :points, allow_destroy: true
+
+
+	def total_points()
+		# @activity = activity
+		total = 0
+    	self.points.each do |points|
+      		total += points.points
+    	end
+
+    	total
+	end
 end

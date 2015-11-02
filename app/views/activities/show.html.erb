@@ -1,11 +1,12 @@
 <h2>Activity: <%= @activity.activity %></h2>
-
+<hr>
 
 <p>Person who preformed activity: <%= User.find(@activity.user_id).name %></p>
 <p>Description: <%= @activity.description %></p>
 <p>TOTAL POINTS: <%= @total %>/<%= @activity.points.count * 10 %></p>
 
 <h3>Voting Users </h3>
+<hr>
 
 <div class="controls">
 	<% if @current_user.id == @activity.created_by_id || @current_user.admin?%>
@@ -17,30 +18,29 @@
 	<% end %>
 
 	<% if @current_user.id != @activity.user_id %>
-		<%= link_to "ADD FEEDBACK",  new_activity_point_path(@activity, @point) %><i class="fa fa-comment-o"></i>
+		<%= link_to "ADD FEEDBACK",  new_activity_point_path(@activity, @point) %> <i class="fa fa-comment-o"></i>
+	<% end %>
+	<% if User.exists?(@activity.created_by_id) %>
+		Activity was Created by: <%= User.find(@activity.created_by_id).name %>
+	<% else %>
+		The user that created this has been removed.
 	<% end %>
 </div>
 <hr>
 	<% @activity.points.each do |x| %>
-		<div style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other">
-			<p><i class="fa fa-angle-double-right"></i> <%= User.find(x.voting_user_id).name %> gave you <%= pluralize(x.points, '/ 10 Point') %></p> 
+		<div style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="thepad">
+			<h4><i class="fa fa-angle-double-right"></i> <%= User.find(x.voting_user_id).name %> gave you <%= pluralize(x.points, '/ 10 Point') %></h4> 
 		<div class="comment">
 
-		<h3>Comment/Feedback</h3> 
+		<h4>Comment/Feedback</h4> 
 			<% if x.comment.present? %>
-				<p> <%= x.comment %></p> 
+				<pre> <%= x.comment %></pre> 
 			<% else %>
-				<p>No comment here.</p>
+				<pre>No comment here.</pre>
 			<% end %>
 		</div>
 		</div>
 		
 	<% end %>
 
-	<hr>
-<% if User.exists?(@activity.created_by_id) %>
-	<p>Activity was Created by: <%= User.find(@activity.created_by_id).name %></p>
-<% else %>
-	<p>The user that created this has been removed.</p>
-<% end %>
 <hr>

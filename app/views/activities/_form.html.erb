@@ -14,19 +14,19 @@
 <%= form_for(@activity) do |f| %>
 	<p>
 		<%= f.label :activity %>
-		<%= f.text_field :activity %>
+		<%= f.text_field :activity, :class => 'form-control' %>
 	</p>
 	<p>
 		<%= f.label :description %>
-		<%= f.text_area :description, size: "40x6" %>
+		<%= f.text_area :description, size: "40x6", :class => 'form-control' %>
 	</p>
 	<p>
-	Who did this? : <%= f.select :user_id, User.all.map { |user| [user.name,  user.id] }, :include_blank => true %>
+	Who did this? : <%= f.select :user_id, User.all.map { |user| [user.name,  user.id] }, {}, :class => 'form-control', :include_blank => true %>
 	</p>
-	<p>Who are you? : <%= f.select :created_by_id, [[@current_user.name,  @current_user.id]] %></p>
+	<p>Who are you? : <%= f.select :created_by_id, [[@current_user.name,  @current_user.id]], {}, :class => 'form-control' %></p>
 
 
-	<%= f.submit 'Submit Activity', :class => "btn default" %>
+	<%= f.submit 'Submit Activity', :class => "btn btn-primary" %>
 <% end %>
 
 </div>

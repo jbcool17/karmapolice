@@ -2,19 +2,18 @@
 	<hr>
 
 <% if @current_user_activities.present? %>
-	<p><%= @current_user.name %>, here are all your activities.</p>
+	<p class="thepad"><%= @current_user.name %>, here are all your activities.</p>
 	<% @current_user_activities.each do |activity| %>
 	
-		<h4 style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other"><i class="fa fa-star-o"></i> Activity: <%= activity.activity %> || <%= link_to('View Stats', activity_path(activity)) %>
-		Total Points 
-			<%= @point_totals %>
+		<h4 style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="thepad"><i class="fa fa-star-o"></i> Activity: <%= activity.activity %> || <%= link_to('View Stats', activity_path(activity)) %>
+		Total Points: <%= activity.total_points %>
 		</h4>
 		
 	<% end %>
 	<hr>
 <% else %>
 
-	<p><%= @current_user.name %>, looks like you haven't done any activities yet. Add them yourself or have the others add them for you.</p>
+	<p class="thepad"><%= @current_user.name %>, looks like you haven't done any activities yet. Add them yourself or have the others add them for you.</p>
 <% end %>
 
 <div class="other_activities">
@@ -22,13 +21,13 @@
 	
 	<hr>
 
-	<p>Add some feedback to the activities.</p>
+	<p class="thepad">Add some feedback to the activities.</p>
 
 	<% @activities.each do |activity| %>
 
 		<% if User.exists?(activity.user_id) && User.find(activity.user_id).id != @current_user.id   %>
 
-			<p style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="every_other" >User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || 
+			<p style="background-color: <%= cycle('rgba(213, 245, 227, 1)', 'rgba(234, 250, 241,.5)') %>" class="thepad" >User: <%= link_to(User.find(activity.user_id).name, activity_path(activity)) %> || 
 			Activity: <%= activity.activity %>
 			<%= link_to('View Stats', activity_path(activity)) %> | 
 			<i class="fa fa-comment-o"></i> <%= link_to('Give Feedback', new_activity_point_path(activity, @point)) %> 

@@ -12,26 +12,29 @@
 
 <%= form_for(@point) do |f| %>
 	<p>
-		<label>Activity </label><%= f.select :activity_id, [[@activity_name, params[:activity_id]]]%>
+		<label>Activity </label>
+		<%= f.select :activity_id, [[@activity_name, params[:activity_id]]], {}, :class => 'form-control'%>
 	</p>
 	<p>
-		<label>Activity Preformer </label><%= f.select :activity_user_id, [[User.find(@activity_preformer).name, User.find(@activity_preformer).id]]%>
+		<label>Activity Preformer </label>
+		<%= f.select :activity_user_id, [[User.find(@activity_preformer).name, User.find(@activity_preformer).id]], {}, :class => 'form-control'%>
 	</p>
 	<p>
-		<label>From User</label><%= f.select :voting_user_id, [[@current_user.name,  @current_user.id]] %>
+		<label>From User </label>
+		<%= f.select :voting_user_id, [[@current_user.name,  @current_user.id]], {}, :class => 'form-control' %>
 	</p>
 
 	<p>
 		<%= f.label :comment %>
-		<%= f.text_area :comment, size: "24x6" %>
+		<%= f.text_area :comment, size: "24x6", :class => 'form-control' %>
 	</p>
 	
 	<p>
 		<label>Points to Add</label>
-		<%= f.select :points, ((0..10).map {|i| [i,i] } ) %>
+		<%= f.select :points, ((0..10).map {|i| [i,i] } ), {}, :class => 'form-control' %>
 	</p>
 
-	<%= f.submit 'SUBMIT',  :class => "btn" %>
+	<%= f.submit 'SUBMIT',  :class => "btn btn-primary" %>
 <% end %>
 
 </div>
