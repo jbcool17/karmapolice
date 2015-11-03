@@ -23,8 +23,8 @@ class Activity < ActiveRecord::Base
 
 
 	def total_points()
-		# @activity = activity
 		total = 0
+		
     	self.points.each do |points|
       		total += points.points
     	end

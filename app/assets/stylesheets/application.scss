@@ -21,69 +21,54 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 @import url(https://fonts.googleapis.com/css?family=Paytone+One);
 body {
-	font-family: 'Roboto', sans-serif;
-  /*background: #eee;*/
-	
+    font-family: 'Roboto', sans-serif;
+    /*background: #eee;*/
 }
-
 .navbar-default {
-  background-color: #2ecc71 !important; 
+    background-color: #2ecc71 !important;
 }
-
 .navbar-default .navbar-nav > li > a {
-  color:white;
+    color: white;
 }
 .navbar-brand {
-  color:white  !important;
+    color: white !important;
 }
-
 .icon-img img {
-  height:25px;
-  border-radius: 0px;
-  vertical-align: middle;
+    height: 25px;
+    border-radius: 0px;
+    vertical-align: middle;
 }
 .slider {
-
-  text-align: center;
-  font-size: 2em;
-  padding: 10px;
-  border: 25px solid black;
-  border-radius: 25px;
+    text-align: center;
+    font-size: 2em;
+    padding: 10px;
+    border: 25px solid black;
+    border-radius: 25px;
 }
-
 #title {
-  float:right;
-  font-family: 'Paytone One', sans-serif;
-  position: absolute;
-  top:0px;
-  right:10px;
-  font-size:2em;
-  letter-spacing: 20px;
-  
-
+    float: right;
+    font-family: 'Paytone One', sans-serif;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 2em;
+    letter-spacing: 20px;
 }
 #welcome {
-  font-weight: bold;
-  
+    font-weight: bold;
 }
-
 .deadlink {
     pointer-events: none;
     cursor: default;
-
 }
-
 .thepad {
-  padding: 10px;
+    padding: 10px;
 }
-
 .container {
-  padding-bottom: 20px;
+    padding-bottom: 20px;
 }
-
 .footer {
-  
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
 }

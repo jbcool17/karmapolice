@@ -1,7 +1,6 @@
 class ActivitiesController < ApplicationController
 
   before_action :check_if_logged_in, :only => [:index, :edit, :update, :show, :new, :destroy]
-
   before_action :check_activity_owner, :only => [:edit, :update]
 
   def index
@@ -17,6 +16,7 @@ class ActivitiesController < ApplicationController
   
     #Get Total Points for Activity
     @total = 0
+
     @activity.points.each do |points|
       @total += points.points
     end
